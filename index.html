@@ -194,7 +194,6 @@
 
     #whatsapp-popup {
         width: 250px; /* Further decreased width for mobile */
-        background-color: white;
         border-radius: 10px;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         overflow: hidden;
@@ -271,11 +270,11 @@
     }
 
     .chat-area {
-        padding: 12px;
+        padding: 11px;
         background-color: #E5DDD5;
         background-image: url('https://i.imgur.com/yJ78O2S.png');
         flex-grow: 1;
-        min-height: 90px;
+        min-height: 95px;
     }
     
     .message-bubble {
@@ -293,7 +292,7 @@
     }
 
     .start-chat-area {
-        padding: 10px 12px;
+        padding: 15px 5px;
         background-color: #f0f2f5;
         text-align: center;
     }
@@ -414,7 +413,7 @@
         setTimeout(() => {
             whatsappPopup.classList.add('show');
             whatsappButton.classList.add('show');
-        }, 4000);
+        }, 1000);
 
         // Toggle popup window when the floating button is clicked
         whatsappButton.addEventListener('click', function(event) {

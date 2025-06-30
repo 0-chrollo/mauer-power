@@ -14,13 +14,15 @@
 
 
 body {
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-    color: var(--light);
+    font-family: 'Poppins';
+    
+ position: sticky;
+   
 }
 
 
 .hero {
+    color: var(--light);
     margin-top: 5vh;
     position: relative;
     height: 95vh; 
