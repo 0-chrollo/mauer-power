@@ -180,7 +180,7 @@
         .cta-container {
             display: flex;
             gap: 1.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
             animation: fadeInUp 0.8s ease-out 0.6s both;
         }
@@ -227,8 +227,8 @@
             display: flex;
             flex-wrap: wrap;
             gap: 2.5rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
+            margin-top: 0px;
+            padding-top: 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             animation: fadeInUp 0.8s ease-out 0.8s both;
         }
@@ -423,11 +423,12 @@
         }
 
         .nav-item {
+           
             position: relative;
         }
 
         .nav-link {
-            color: #333;
+            color:  #036559be;
             text-decoration: none;
             font-weight: 500;
             padding: 10px 0;
@@ -442,7 +443,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #007bff;
+            background: #098e7e;
             transition: width 0.3s ease;
         }
 
@@ -451,7 +452,7 @@
         }
 
         .nav-link:hover {
-            color: #007bff;
+            color: #069484;
             transform: translateY(-1px);
         }
 
@@ -502,28 +503,7 @@
             visibility: visible;
         }
 
-        /* Content for demo */
-        .content {
-            margin-top: 70px;
-            padding: 4rem 2rem;
-            text-align: center;
-            color: #333;
-        }
-
-        .content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .content p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
-        }
-
+      
         /* Mobile Styles */
         @media screen and (max-width: 768px) {
             .hamburger {
@@ -534,7 +514,7 @@
                 position: fixed;
                 top: 0;
                 left: -100%;
-                width: 80%;
+                width: 70%;
                 height: 100vh;
                 background: #ffffff;
                 flex-direction: column;
@@ -568,29 +548,19 @@
             .nav-menu.active .nav-item:nth-child(5) { transition-delay: 0.5s; }
 
             .nav-link {
-                font-size: 1.3rem;
-                color: #333;
+                font-size: 1.2rem;
+                color: #036559be;
                 padding: 1rem 0;
             }
 
-            .content h1 {
-                font-size: 2rem;
-            }
-
-            .content p {
-                font-size: 1rem;
-                padding: 0 1rem;
-            }
+          
         }
 
         @media screen and (max-width: 480px) {
             .nav-menu {
-                width: 90%;
+                width: 85%;
             }
 
-            .content h1 {
-                font-size: 1.8rem;
-            }
         }
     </style>
 
@@ -605,15 +575,11 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">About</a>
-                </li>
+            
                 <li class="nav-item">
                     <a href="#" class="nav-link">Services</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Portfolio</a>
-                </li>
+              
                 <li class="nav-item">
                     <a href="#" class="nav-link">Contact</a>
                 </li>
@@ -905,11 +871,11 @@
         /* Feature Card Styles */
         .feature-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 3px;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
             position: relative;
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            border: 1px solid #008b7b1d;
         }
 
         .feature-card:hover {
@@ -924,7 +890,7 @@
         }
 
         .card-1 .icon-container {
-            width: 80px;
+            width: 90px;
             height: 80px;
             margin: 0 auto 30px;
             display: flex;
@@ -1210,24 +1176,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
