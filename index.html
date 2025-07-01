@@ -424,7 +424,7 @@
             setTimeout(() => {
                 whatsappPopup.classList.add('show');
                 whatsappButton.classList.add('show');
-            }, 5000);
+            }, 7000);
 
             // Toggle popup window when the floating button is clicked
             whatsappButton.addEventListener('click', function(event) {
@@ -448,6 +448,440 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    /* General Body Styles */
+    .project {
+        background-color: #ffffff;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+        margin: 0;
+        color: #1f2937; /* Equivalent to text-gray-800 */
+    }
+
+    /* Main container for the section */
+    .projects-section {
+        width: 100%;
+        max-width: 1152px; /* Equivalent to max-w-6xl */
+        margin-left: auto;
+        margin-right: auto;
+        padding: 4rem 1rem; /* py-16 px-4 */
+        box-sizing: border-box;
+    }
+
+    /* Header Styles */
+    .section-header {
+        text-align: center;
+        margin-bottom: 3rem; /* mb-12 */
+    }
+
+    .section-header .subtitle {
+        color: #f97316; /* text-orange-500 */
+        font-weight: 600; /* font-semibold */
+        font-size: 1.125rem; /* text-lg */
+        margin-bottom: 0.5rem; /* mb-2 */
+    }
+
+    .section-header .title {
+        font-size: 2.25rem; /* text-4xl */
+        font-weight: 700; /* font-bold */
+    }
+
+    /* Slider Styles */
+    .slider-wrapper {
+        position: relative;
+    }
+
+    .slider-container {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 2rem; /* pb-8 */
+        gap: 1.5rem; /* space-x-6 */
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    }
+
+    /* Hide scrollbar */
+    .slider-container::-webkit-scrollbar {
+        display: none;
+    }
+    .slider-container {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    /* Project Card Styles */
+    .slider-item {
+        flex-shrink: 0;
+        width: 80vw;
+        scroll-snap-align: center;
+    }
+
+    .project-card {
+        position: relative;
+        border-radius: 2px; /* rounded-2xl */
+        overflow: hidden;
+        height: 20rem; /* h-80 */
+        cursor: pointer;
+    }
+
+    .project-card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-card-image {
+        transform: scale(1.05);
+    }
+
+    .project-card-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .project-card-icon-wrapper {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: white;
+        padding: 0.75rem; /* p-3 */
+        border-radius: 0.5rem; /* rounded-lg */
+    }
+
+    .project-card-icon {
+        width: 1.5rem; /* w-6 */
+        height: 1.5rem; /* h-6 */
+        color:  #00c6ab; /* text-orange-500 */
+    }
+
+    .project-card-content {
+        position: absolute;
+        bottom: 1.5rem; /* bottom-6 */
+        left: 1.5rem; /* left-6 */
+    }
+
+    .project-card-title {
+        color: white;
+        font-size: 1.5rem; /* text-2xl */
+        font-weight: 700; /* font-bold */
+        text-decoration: underline;
+    }
+
+    /* Navigation Arrow Styles */
+    .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: white;
+        border: none;
+        border-radius: 9999px; /* rounded-full */
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        z-index: 10;
+        cursor: pointer;
+        padding: 0.5rem;
+        display: none; /* Hidden by default, shown on larger screens */
+    }
+
+    .slider-arrow svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: #374151; /* text-gray-700 */
+    }
+    
+    #prev-button {
+        left: 0;
+        transform: translateY(-50%) translateX(-50%);
+    }
+    
+    #next-button {
+        right: 0;
+        transform: translateY(-50%) translateX(50%);
+        border-radius: 0.375rem; /* rounded-md */
+        background-color:  #00c6ab; /* bg-orange-500 */
+        display: block; /* Always show next button */
+    }
+    #next-button svg {
+        color: white;
+    }
+    
+    /* Indicators Styles */
+    .indicators-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem; /* space-x-2 */
+        margin-top: 2rem; /* mt-8 */
+    }
+
+    .indicator {
+        width: 0.75rem; /* w-3 */
+        height: 0.75rem; /* h-3 */
+        border-radius: 9999px;
+        background-color: #d1d5db; /* bg-gray-300 */
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: all 0.3s ease;
+    }
+
+    .indicator.active {
+      
+        width: 1.5rem; /* w-6 */
+    }
+
+    /* Responsive Design */
+    @media (min-width: 640px) { /* sm breakpoint */
+        .slider-item {
+            width: 45vw;
+        }
+    }
+
+    @media (min-width: 768px) { /* md breakpoint */
+        .title {
+            font-size: 3rem; /* md:text-5xl */
+        }
+        .slider-item {
+            width: 30vw;
+        }
+        #prev-button {
+            display: block;
+        }
+    }
+    
+    @media (min-width: 1024px) { /* lg breakpoint */
+        .slider-item {
+            width: 23vw;
+        }
+    }
+</style>
+
+<section class="project">
+<section class="projects-section">
+    <!-- Section Header -->
+    <header class="section-header">
+        <h3 class="subtitle">Completed Projects</h3>
+        <h2 class="title">Our Featured Projects</h2>
+    </header>
+
+    <div class="slider-wrapper">
+        <!-- Slider Container -->
+        <div id="slider-container" class="slider-container">
+            <!-- Project Card 1 -->
+            <div class="slider-item">
+                <div class="project-card">
+                    <img src="assets/solar2.webp"
+                         alt="Energy Manufacture Project" class="project-card-image">
+                    <div class="project-card-overlay"></div>
+                    <div class="project-card-icon-wrapper">
+                        <svg class="project-card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div class="project-card-content">
+                        <h4 class="project-card-title">Energy Manufacture</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="slider-item">
+                <div class="project-card">
+                    <img src="assets/solar1.webp"
+                         alt="Solar Energy Lighting" class="project-card-image">
+                    <div class="project-card-overlay"></div>
+                    <div class="project-card-icon-wrapper">
+                        <svg class="project-card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                        </svg>
+                    </div>
+                    <div class="project-card-content">
+                        <h4 class="project-card-title">Solar Energy Lighting</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="slider-item">
+                <div class="project-card">
+                    <img src="assets/solar3.webp"
+                         alt="Solar Panel Installation" class="project-card-image">
+                    <div class="project-card-overlay"></div>
+                    <div class="project-card-icon-wrapper">
+                         <svg class="project-card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657L13.414 22.9a2 2 0 01-2.828 0L6.343 18.657a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <div class="project-card-content">
+                        <h4 class="project-card-title">Solar Panel</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="slider-item">
+                <div class="project-card">
+                    <img src="assets/solar5.webp"
+                         alt="Wind Power" class="project-card-image">
+                    <div class="project-card-overlay"></div>
+                    <div class="project-card-icon-wrapper">
+                       <svg class="project-card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div class="project-card-content">
+                        <h4 class="project-card-title">Wind Power</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 5 -->
+            <div class="slider-item">
+                <div class="project-card">
+                    <img src="assets/solar6.webp" 
+                         alt="New Project" class="project-card-image">
+                    <div class="project-card-overlay"></div>
+                    <div class="project-card-icon-wrapper">
+                        <svg class="project-card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div class="project-card-content">
+                        <h4 class="project-card-title">New Project</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-item">
+                <div class="project-card">
+                    <img src="assets/solar7.webp" 
+                         alt="New Project" class="project-card-image">
+                    <div class="project-card-overlay"></div>
+                    <div class="project-card-icon-wrapper">
+                        <svg class="project-card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div class="project-card-content">
+                        <h4 class="project-card-title">New Project</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Side Navigation Arrows -->
+        <button id="prev-button" class="slider-arrow">
+            <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button id="next-button" class="slider-arrow">
+             <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+    </div>
+
+    <!-- Indicators -->
+    <div id="indicators" class="indicators-container">
+        <!-- Indicators will be generated by JS -->
+    </div>
+</section>
+
+<script>
+    const sliderContainer = document.getElementById('slider-container');
+    const prevButton = document.getElementById('prev-button');
+    const nextButton = document.getElementById('next-button');
+    const indicatorsContainer = document.getElementById('indicators');
+
+    const items = Array.from(sliderContainer.children);
+    const itemCount = items.length;
+    const pageCount = itemCount;
+
+    // Generate indicators
+    for (let i = 0; i < pageCount; i++) {
+        const button = document.createElement('button');
+        button.classList.add('indicator');
+        if (i === 0) {
+            button.classList.add('active');
+        }
+        button.addEventListener('click', () => {
+            scrollToPage(i);
+        });
+        indicatorsContainer.appendChild(button);
+    }
+    
+    const indicators = Array.from(indicatorsContainer.children);
+
+    function updateIndicators(currentPage) {
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentPage);
+        });
+    }
+    
+    function scrollToPage(pageIndex) {
+        const firstItem = items[0];
+        // Get the computed style to find the gap value
+        const gap = parseFloat(window.getComputedStyle(sliderContainer).gap);
+        const scrollLeftValue = pageIndex * (firstItem.offsetWidth + gap);
+        
+        sliderContainer.scrollTo({
+            left: scrollLeftValue,
+            behavior: 'smooth'
+        });
+    }
+
+    // Event Listeners for next/prev buttons
+    nextButton.addEventListener('click', () => {
+        const itemWidth = items[0].offsetWidth;
+        const gap = parseFloat(window.getComputedStyle(sliderContainer).gap);
+        let currentPage = Math.round(sliderContainer.scrollLeft / (itemWidth + gap));
+
+        if (currentPage < pageCount - 1) {
+            scrollToPage(currentPage + 1);
+        } else {
+             scrollToPage(0); // Loop back to start
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        const itemWidth = items[0].offsetWidth;
+        const gap = parseFloat(window.getComputedStyle(sliderContainer).gap);
+        let currentPage = Math.round(sliderContainer.scrollLeft / (itemWidth + gap));
+
+        if (currentPage > 0) {
+            scrollToPage(currentPage - 1);
+        }
+    });
+
+    // Update indicators on scroll
+    let scrollTimeout;
+    sliderContainer.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            const itemWidth = items[0].offsetWidth;
+            const gap = parseFloat(window.getComputedStyle(sliderContainer).gap);
+            const currentPage = Math.round(sliderContainer.scrollLeft / (itemWidth + gap));
+            updateIndicators(currentPage);
+        }, 150); // Small delay to prevent firing too often
+    });
+    
+    // Initial state
+    updateIndicators(0);
+
+</script>
+
+</section>
 </body>
 <script src="scripts.js"></script>
 </html>
