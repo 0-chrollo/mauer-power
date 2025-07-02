@@ -535,15 +535,15 @@
     /* Project Card Styles */
     .slider-item {
         flex-shrink: 0;
-        width: 75vw;
+        width: 73vw;
         scroll-snap-align: center;
     }
 
     .project-card {
         position: relative;
-        border-radius: 7px; /* rounded-2xl */
+        border-radius: 5px; /* rounded-2xl */
         overflow: hidden;
-        height: 18.5rem; /* h-80 */
+        height: 18.6rem; /* h-80 */
         cursor: pointer;
     }
 
@@ -569,8 +569,16 @@
         top: 1rem;
         right: 1rem;
         background-color: white;
-        padding: 0.75rem; /* p-3 */
-        border-radius: 0.5rem; /* rounded-lg */
+        padding:0.3rem 0.6rem;
+        background:rgba(255,255,255,0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backgrop-filter:blur(8px);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 5px;
+        cursor:default;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+
     }
 
     .project-card-icon {
@@ -587,9 +595,18 @@
 
     .project-card-title {
         color: white;
-        font-size: 1.5rem; /* text-2xl */
-        font-weight: 700; /* font-bold */
-        text-decoration: underline;
+        font-size: 1rem; /* text-2xl */
+        border-radius: 5px;
+       padding:0.3rem 1rem;
+        background:rgba(255,255,255,0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backgrop-filter:blur(8px);
+        border: 1px solid rgba(255,255,255,0.2);
+   
+        cursor:default;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+
     }
 
     /* Navigation Arrow Styles */
