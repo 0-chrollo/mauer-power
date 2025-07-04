@@ -575,7 +575,7 @@ body {
 :root {
     --solar-primary: #00B4A0;
     --solar-accent: #FF7E33;
-    --solar-dark: #0D2D47;
+    --solar-dark: #026156;
     --solar-light: #F8FAFC;
     --solar-gray: #E2E8F0;
     --solar-text: #334155;
@@ -601,7 +601,7 @@ body {
 }
 
 .section-title {
-    font-size: 2.75rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--solar-dark);
     margin-bottom: 20px;

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Icon List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+
+
+    .icon-list {
+      display: grid;
+      gap: 25px;
+      padding: 20px;
+    }
+
+    /* Desktop 3x3 grid */
+    @media (min-width: 768px) {
+      .icon-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .icon-item {
+      display: flex;
+      align-items: flex-start; /* Aligns icon with the top of the text block */
+      gap: 16px; /* Increased gap slightly for better spacing */
+      text-align: left;
+      font-family: sans-serif;
+      color:black;
+    }
+
+    .icon {
+      color:rgb(19, 61, 167);
+      background-color:rgba(255, 0, 0, 0.136);
+      font-size: 20px; /* Slightly larger icon */
+      /* margin-top was removed for cleaner alignment */
+    }
+
+    .icon-item p {
+      font-size: 2vh;
+        margin: 0; /* Removes default paragraph margin */
+    }
+
+  </style>
+
+  <div class="icon-list">
+    <div class="icon-item">
+      <i class="far fa-square icon"></i>
+      <p><b>High-Quality Solar Panels:</b> We provide top-tier, efficient solar panels tailored to your energy needs.</p>
+    </div>
+    <div class="icon-item">
+      <i class="far fa-square icon"></i>
+      <p><b>Expert Maintenance:</b> Our team offers comprehensive maintenance and support to ensure optimal performance.</p>
+    </div>
+    <div class="icon-item">
+      <i class="far fa-square icon"></i>
+      <p><b>Energy Storage Solutions:</b> We install reliable battery backup systems so you have power day and night.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mauer Power | Solar Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -24,10 +26,15 @@
                 <li class="nav-item">
                     <a href="services.html" class="nav-link">Services</a>
                 </li>
-              
+
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link">Testimonials</a>
+                </li>
+
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
+
             </ul>
 
             <div class="hamburger" id="hamburger">
@@ -494,19 +501,16 @@
     /* Header Styles */
     .section-header {
         text-align: center;
-        margin-bottom: 3rem; /* mb-12 */
+        margin-bottom: 1rem; /* mb-12 */
     }
 
-    .section-header .subtitle {
-        color: #f97316; /* text-orange-500 */
-        font-weight: 600; /* font-semibold */
-        font-size: 1.125rem; /* text-lg */
-        margin-bottom: 0.5rem; /* mb-2 */
-    }
+
 
     .section-header .title {
-        font-size: 2.25rem; /* text-4xl */
-        font-weight: 700; /* font-bold */
+        color:#038977;
+        font-size: 1.2rem; /* text-4xl */
+        font-weight: 600; /* font-bold */
+        font-family:Georgia;
     }
 
     /* Slider Styles */
@@ -577,7 +581,6 @@
         border-radius: 5px;
         cursor:default;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-
 
     }
 
@@ -681,7 +684,7 @@
 
     @media (min-width: 768px) { /* md breakpoint */
         .title {
-            font-size: 3rem; /* md:text-5xl */
+            font-size: 2rem; /* md:text-5xl */
         }
         .slider-item {
             width: 30vw;
@@ -698,14 +701,79 @@
     }
 </style>
 
+
+
+
+
+
+
+
+<header class="section-header">
+    <h3 class="subtitle"></h3>
+    <h2 class="title"><i class="fa-solid fa-bolt" style="color: #07bba3; font-size: 3vh;"></i>
+
+        Mauer Power recent projects</h2>
+</header>
+
+<style>
+    .icon-list {
+      display: grid;
+      gap: 25px;
+      padding: 20px;
+    
+    }
+
+    /* Desktop 3x3 grid */
+    @media (min-width: 768px) {
+      .icon-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .icon-item {
+      display: flex;
+      align-items: flex-start; /* Aligns icon with the top of the text block */
+      gap: 16px; /* Increased gap slightly for better spacing */
+      text-align: left;
+      font-family: sans-serif;
+      color: #05504697;
+    }
+
+    .icon {
+      color: #00c6ab;
+      background-color: #00c6ab27;
+      font-size: 20px; /* Slightly larger icon */
+      /* margin-top was removed for cleaner alignment */
+    }
+
+    .icon-item p {
+      font-size: 2vh;
+        margin: 0; /* Removes default paragraph margin */
+    }
+
+  </style>
+
+  <div class="icon-list">
+    <div class="icon-item">
+      <i class="far fa-square icon"></i>
+      <p><b>High-Quality Solar Panels:</b> We provide top-tier, efficient solar panels tailored to your energy needs.</p>
+    </div>
+    <div class="icon-item">
+      <i class="far fa-square icon"></i>
+      <p><b>Expert Maintenance:</b> Our team offers comprehensive maintenance and support to ensure optimal performance.</p>
+    </div>
+    <div class="icon-item">
+      <i class="far fa-square icon"></i>
+      <p><b>Energy Storage Solutions:</b> We install reliable battery backup systems so you have power day and night.</p>
+    </div>
+  </div>
+
+
+
 <section class="project">
 <section class="projects-section">
-    <!-- Section Header -->
-    <header class="section-header">
-        <h3 class="subtitle">Completed Projects</h3>
-        <h2 class="title">Our Featured Projects</h2>
-    </header>
-
+    
+  
     <div class="slider-wrapper">
         <!-- Slider Container -->
         <div id="slider-container" class="slider-container">
