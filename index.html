@@ -976,8 +976,296 @@
     updateIndicators(0);
 
 </script>
-
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+    /* Footer Styles */
+    .footer {
+        background-color:#00c6ab;
+        color: #ecf0f1;
+        padding: 40px 0 20px;
+        margin-top: auto;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+        color: #ffffff;
+        margin-bottom: 15px;
+        font-size: 1.2em;
+        font-weight: 600;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
+        display: inline-block;
+    }
+
+    .footer-section p,
+    .footer-section li {
+        color: #bdc3c7;
+        font-size: 0.95em;
+        line-height: 1.7;
+    }
+
+    .footer-section ul {
+        list-style: none;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-section ul li a {
+        color: #bdc3c7;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+        color: #3498db;
+    }
+
+    .contact-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .contact-info i {
+        width: 20px;
+        margin-right: 10px;
+        color: #3498db;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .social-links a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: #34495e;
+        color: #ecf0f1;
+        text-align: center;
+        line-height: 40px;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: background-color 0.3s ease;
+    }
+
+    .social-links a:hover {
+        background-color: #3498db;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid #34495e;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer-bottom p {
+        color: #95a5a6;
+        font-size: 0.9em;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+        color: #95a5a6;
+        text-decoration: none;
+        font-size: 0.9em;
+        transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+        color: #3498db;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        
+        .footer-bottom-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .footer-bottom-links {
+            justify-content: center;
+        }
+        
+        .social-links {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .footer {
+            padding: 30px 0 15px;
+        }
+        
+        .footer-container {
+            padding: 0 15px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.1em;
+        }
+        
+        .footer-section p,
+        .footer-section li {
+            font-size: 0.9em;
+        }
+        
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+        }
+    }
+</style>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- Company Info Section -->
+            <div class="footer-section">
+                <h3>About Company</h3>
+                <p>We are a leading professional services company committed to delivering excellence and innovation to our clients worldwide. Our expertise spans multiple industries with a focus on quality and integrity.</p>
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">TW</a>
+                    <a href="#">IN</a>
+                    <a href="#">YT</a>
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Business Consulting</a></li>
+                    <li><a href="#">Strategic Planning</a></li>
+                    <li><a href="#">Project Management</a></li>
+                    <li><a href="#">Financial Advisory</a></li>
+                    <li><a href="#">Risk Management</a></li>
+                    <li><a href="#">Compliance Services</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">News & Updates</a></li>
+                    <li><a href="#">Career Opportunities</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <div class="contact-info">
+                    <i>📍</i>
+                    <p>123 Business Street<br>Corporate District<br>City, State 12345</p>
+                </div>
+                <div class="contact-info">
+                    <i>📞</i>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-info">
+                    <i>✉️</i>
+                    <p>info@company.com</p>
+                </div>
+                <div class="contact-info">
+                    <i>🌐</i>
+                    <p>www.company.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 Company Name. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
 </body>
 <script src="scripts.js"></script>
 </html>
