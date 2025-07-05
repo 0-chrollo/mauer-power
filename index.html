@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mauer Power | Solar Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
- 
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -1182,6 +1184,618 @@
     }
 </style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="clients">
+    
+    
+    <style>
+        .clients {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .review-container {
+            max-width: 1200px;
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        .review-card {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: auto; /* Allow height to adjust based on content */
+            min-height: 250px; /* Ensure a minimum height for consistency */
+        }
+
+        .profile-initials {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: #4CAF50; /* Default green */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* Color variations for initials */
+        .profile-initials.blue { background-color: #2196F3; }
+        .profile-initials.purple { background-color: #9C27B0; }
+        .profile-initials.orange { background-color: #FF9800; }
+        .profile-initials.red { background-color: #F44336; }
+        .profile-initials.teal { background-color: #009688; }
+        .profile-initials.indigo { background-color: #3F51B5; }
+
+        .stars {
+            display: flex;
+            gap: 4px;
+        }
+
+        .star-icon {
+            color: #FFC107; /* Gold color for stars */
+            font-size: 20px;
+        }
+
+        .read-more-btn {
+            color: #1a73e8;
+            cursor: pointer;
+            font-weight: 500;
+            margin-top: 8px;
+            align-self: flex-start;
+        }
+
+        .review-text.expanded {
+            max-height: none;
+        }
+
+        .review-text.truncated {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Limit to 3 lines by default */
+            -webkit-box-orient: vertical;
+        }
+
+        /* Carousel specific styles */
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 20px; /* Spacing between cards */
+            touch-action: pan-y; /* Allows vertical scrolling, but handles horizontal pan */
+        }
+
+        .carousel-item {
+            flex-shrink: 0; /* Prevent items from shrinking */
+            /* Adjusted width calculations for increased width */
+            width: calc(100% - 5px); /* Default for 1 item per view, accounting for 2.5px margin on each side */
+            margin: 0 2.5px; /* Reduced margin to make cards wider */
+            box-sizing: border-box;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 20;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-button.left { left: 0; } /* Position at the very edge of the wrapper */
+        .carousel-button.right { right: 0; } /* Position at the very edge of the wrapper */
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #cbd5e0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #4299e1;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 640px) { /* sm */
+            .carousel-item {
+                /* Two items per view. 20px gap. 2.5px margin on each side of the carousel-item.
+                   Total non-card horizontal space for 2 items: (2 * 2.5px outer margin) + (1 * 20px inner gap) = 5px + 20px = 25px.
+                   Divide by 2 items = 12.5px. */
+                width: calc(50% - 12.5px);
+            }
+            .carousel-button.left { left: 10px; }
+            .carousel-button.right { right: 10px; }
+        }
+
+        @media (min-width: 1024px) { /* lg */
+            .carousel-item {
+                /* Three items per view. 20px gap. 2.5px margin on each side of the carousel-item.
+                   Total non-card horizontal space for 3 items: (2 * 2.5px outer margin) + (2 * 20px inner gaps) = 5px + 40px = 45px.
+                   Divide by 3 items = 15px. */
+                width: calc(33.333% - 15px);
+            }
+            .carousel-button.left { left: 20px; }
+            .carousel-button.right { right: 20px; }
+        }
+    </style>
+
+
+    <div class="review-container p-4">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">What Our Customers Say</h2>
+
+        <!-- Overall Rating Section -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8 flex flex-col items-center justify-center text-center">
+            <div class="flex flex-col sm:flex-row items-center mb-4">
+                <img src="https://placehold.co/100x30/FFFFFF/000000?text=Google+Reviews" alt="Google Reviews" class="h-6 mr-0 sm:mr-3 mb-2 sm:mb-0">
+                <span class="text-4xl font-bold text-gray-800 mr-0 sm:mr-3">4.7</span>
+                <div class="stars mb-2 sm:mb-0">
+                    <span class="star-icon">&#9733;</span>
+                    <span class="star-icon">&#9733;</span>
+                    <span class="star-icon">&#9733;</span>
+                    <span class="star-icon">&#9733;</span>
+                    <span class="star-icon">&#9733;</span>
+                </div>
+                <span class="text-gray-600 ml-0 sm:ml-3">(16,338)</span>
+            </div>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out">
+                Review us on Google
+            </button>
+        </div>
+
+        <!-- Reviews Carousel Section -->
+        <div class="carousel-wrapper">
+            <div class="carousel-inner" id="reviewCarousel">
+                <!-- Review Card 1 -->
+                <div class="carousel-item">
+                    <div class="review-card">
+                        <div class="flex items-center mb-4">
+                            <div class="profile-initials blue">LM</div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold text-lg text-gray-900">Lucas Mu</h3>
+                                <p class="text-sm text-gray-500">2 days ago</p>
+                            </div>
+                            <img src="https://placehold.co/60x20/FFFFFF/000000?text=G+Google" alt="Google" class="ml-auto w-16 h-auto">
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <svg class="w-5 h-5 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-green-600 font-medium text-sm">Verified Customer</span>
+                        </div>
+                        <div class="stars mb-4">
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                        </div>
+                        <p class="text-gray-700 mb-4 review-text truncated" data-fulltext="Energy mate solutions provides the best energy service in Lahore. Their team is professional and highly efficient. I am extremely satisfied with their work and would highly recommend them to anyone looking for reliable energy solutions. The installation was smooth, and the customer support has been excellent.">
+                            Energy mate solutions provides the best energy service in Lahore. Their team is professional and highly efficient. I am extremely satisfied with their work and would highly recommend them to anyone looking for reliable energy solutions. The installation was smooth, and the customer support has been excellent.
+                        </p>
+                        <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Review Card 2 -->
+                <div class="carousel-item">
+                    <div class="review-card">
+                        <div class="flex items-center mb-4">
+                            <div class="profile-initials purple">AK</div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold text-lg text-gray-900">Azar Khan</h3>
+                                <p class="text-sm text-gray-500">5 days ago</p>
+                            </div>
+                            <img src="https://placehold.co/60x20/FFFFFF/000000?text=G+Google" alt="Google" class="ml-auto w-16 h-auto">
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <svg class="w-5 h-5 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-green-600 font-medium text-sm">Verified Customer</span>
+                        </div>
+                        <div class="stars mb-4">
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                        </div>
+                        <p class="text-gray-700 mb-4 review-text truncated" data-fulltext="Fantastic service! The team was very professional and delivered exactly what was promised. I'm very impressed with the quality and efficiency. Highly recommend their services for anyone in need of reliable and effective solutions. Will definitely use them again for future projects.">
+                            Fantastic service! The team was very professional and delivered exactly what was promised. I'm very impressed with the quality and efficiency. Highly recommend their services for anyone in need of reliable and effective solutions. Will definitely use them again for future projects.
+                        </p>
+                        <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="carousel-item">
+                    <div class="review-card">
+                        <div class="flex items-center mb-4">
+                            <div class="profile-initials orange">SJ</div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold text-lg text-gray-900">Sarah J.</h3>
+                                <p class="text-sm text-gray-500">1 week ago</p>
+                            </div>
+                            <img src="https://placehold.co/60x20/FFFFFF/000000?text=G+Google" alt="Google" class="ml-auto w-16 h-auto">
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <svg class="w-5 h-5 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-green-600 font-medium text-sm">Verified Customer</span>
+                        </div>
+                        <div class="stars mb-4">
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                        </div>
+                        <p class="text-gray-700 mb-4 review-text truncated" data-fulltext="Absolutely brilliant! Their solutions are top-notch and have significantly improved our operations. The team was incredibly helpful and responsive throughout the entire process. I couldn't be happier with the results and highly recommend them. A truly professional and reliable company.">
+                            Absolutely brilliant! Their solutions are top-notch and have significantly improved our operations. The team was incredibly helpful and responsive throughout the entire process. I couldn't be happier with the results and highly recommend them. A truly professional and reliable company.
+                        </p>
+                        <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Review Card 4 -->
+                <div class="carousel-item">
+                    <div class="review-card">
+                        <div class="flex items-center mb-4">
+                            <div class="profile-initials red">DB</div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold text-lg text-gray-900">David B.</h3>
+                                <p class="text-sm text-gray-500">2 weeks ago</p>
+                            </div>
+                            <img src="https://placehold.co/60x20/FFFFFF/000000?text=G+Google" alt="Google" class="ml-auto w-16 h-auto">
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <svg class="w-5 h-5 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-green-600 font-medium text-sm">Verified Customer</span>
+                        </div>
+                        <div class="stars mb-4">
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                        </div>
+                        <p class="text-gray-700 mb-4 review-text truncated" data-fulltext="Excellent experience from start to finish. The service was prompt, efficient, and exceeded my expectations. The staff was knowledgeable and friendly, making the whole process seamless. I highly recommend their services to anyone seeking quality and reliability.">
+                            Excellent experience from start to finish. The service was prompt, efficient, and exceeded my expectations. The staff was knowledgeable and friendly, making the whole process seamless. I highly recommend their services to anyone seeking quality and reliability.
+                        </p>
+                        <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Review Card 5 -->
+                <div class="carousel-item">
+                    <div class="review-card">
+                        <div class="flex items-center mb-4">
+                            <div class="profile-initials teal">EM</div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold text-lg text-gray-900">Emily M.</h3>
+                                <p class="text-sm text-gray-500">3 weeks ago</p>
+                            </div>
+                            <img src="https://placehold.co/60x20/FFFFFF/000000?text=G+Google" alt="Google" class="ml-auto w-16 h-auto">
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <svg class="w-5 h-5 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-green-600 font-medium text-sm">Verified Customer</span>
+                        </div>
+                        <div class="stars mb-4">
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                            <span class="star-icon">&#9733;</span>
+                        </div>
+                        <p class="text-gray-700 mb-4 review-text truncated" data-fulltext="Highly satisfied with the results! The team went above and beyond to ensure everything was perfect. Their attention to detail and commitment to customer satisfaction are truly commendable. I would definitely recommend them to anyone seeking high-quality service.">
+                            Highly satisfied with the results! The team went above and beyond to ensure everything was perfect. Their attention to detail and commitment to customer satisfaction are truly commendable. I would definitely recommend them to anyone seeking high-quality service.
+                        </p>
+                        <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Navigation Buttons -->
+            <button class="carousel-button left" onclick="prevSlide()">
+                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button class="carousel-button right" onclick="nextSlide()">
+                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Carousel Dots -->
+        <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+
+    <script>
+        // Function to generate initials and assign a color class
+        function generateInitials(name) {
+            const parts = name.split(' ');
+            let initials = '';
+            if (parts.length > 0) {
+                initials += parts[0].charAt(0);
+                if (parts.length > 1) {
+                    initials += parts[parts.length - 1].charAt(0);
+                }
+            }
+            return initials.toUpperCase();
+        }
+
+        // Assign random color classes to profile initials
+        document.querySelectorAll('.profile-initials').forEach(element => {
+            const colors = ['blue', 'purple', 'orange', 'red', 'green', 'teal', 'indigo'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            element.classList.add(randomColor);
+        });
+
+        // Read More / Read Less functionality
+        function toggleReadMore(button) {
+            const reviewText = button.previousElementSibling;
+            if (reviewText.classList.contains('truncated')) {
+                reviewText.classList.remove('truncated');
+                reviewText.classList.add('expanded');
+                button.textContent = 'Read Less';
+            } else {
+                reviewText.classList.remove('expanded');
+                reviewText.classList.add('truncated');
+                button.textContent = 'Read More';
+            }
+        }
+
+        // Carousel functionality
+        const carousel = document.getElementById('reviewCarousel');
+        const carouselDotsContainer = document.getElementById('carouselDots');
+        let currentIndex = 0;
+        let itemsPerView = 1; // Default for mobile
+        const cardGap = 20; // This should match the 'gap' in .carousel-inner CSS
+
+        // Touch swipe variables
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const minSwipeDistance = 50; // Minimum pixels to register a swipe
+
+        function updateItemsPerView() {
+            if (window.innerWidth >= 1024) { // lg breakpoint
+                itemsPerView = 3;
+            } else if (window.innerWidth >= 640) { // sm breakpoint
+                itemsPerView = 2;
+            } else {
+                itemsPerView = 1;
+            }
+            updateCarousel();
+            updateDots();
+        }
+
+        function updateCarousel() {
+            const totalItems = carousel.children.length;
+            const maxIndex = Math.ceil(totalItems / itemsPerView) - 1;
+
+            if (currentIndex > maxIndex) {
+                currentIndex = maxIndex;
+            }
+            if (currentIndex < 0) {
+                currentIndex = 0;
+            }
+
+            // Get the actual width of a carousel item including its own padding and border
+            const firstItem = carousel.children[0];
+            const itemWidth = firstItem.offsetWidth; // This gives the total rendered width including padding and border
+
+            // Get the computed margins of the carousel item
+            const itemStyle = window.getComputedStyle(firstItem);
+            const itemMarginLeft = parseFloat(itemStyle.marginLeft);
+            const itemMarginRight = parseFloat(itemStyle.marginRight);
+            const totalItemHorizontalMargin = itemMarginLeft + itemMarginRight;
+
+            // Calculate the total width of one "page" of items, including gaps and the item's own margins
+            let totalPageWidth = 0;
+            if (itemsPerView === 1) {
+                // For 1 item, it's the item's width plus its horizontal margins
+                totalPageWidth = itemWidth + totalItemHorizontalMargin;
+            } else {
+                // For multiple items, it's the sum of item widths (including their own margins) plus gaps between them
+                totalPageWidth = (itemWidth + totalItemHorizontalMargin) * itemsPerView + (cardGap * (itemsPerView - 1));
+            }
+
+            const translateValue = -currentIndex * totalPageWidth;
+            carousel.style.transform = `translateX(${translateValue}px)`;
+            updateDots();
+        }
+
+        function nextSlide() {
+            const totalItems = carousel.children.length;
+            const maxIndex = Math.ceil(totalItems / itemsPerView) - 1;
+            currentIndex = (currentIndex + 1) % (maxIndex + 1);
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            const totalItems = carousel.children.length;
+            const maxIndex = Math.ceil(totalItems / itemsPerView) - 1;
+            currentIndex = (currentIndex - 1 + (maxIndex + 1)) % (maxIndex + 1);
+            updateCarousel();
+        }
+
+        function updateDots() {
+            carouselDotsContainer.innerHTML = '';
+            const totalItems = carousel.children.length;
+            const totalDots = Math.ceil(totalItems / itemsPerView);
+
+            for (let i = 0; i < totalDots; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === currentIndex) {
+                    dot.classList.add('active');
+                }
+                dot.addEventListener('click', () => {
+                    currentIndex = i;
+                    updateCarousel();
+                });
+                carouselDotsContainer.appendChild(dot);
+            }
+        }
+
+        // Touch event listeners for swiping
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            // Disable CSS transition during touch to allow immediate dragging feedback
+            carousel.style.transition = 'none';
+        });
+
+        carousel.addEventListener('touchmove', (e) => {
+            touchEndX = e.touches[0].clientX;
+            const currentTranslateX = parseFloat(carousel.style.transform.replace('translateX(', '').replace('px)', '') || 0);
+            const deltaX = touchEndX - touchStartX;
+            carousel.style.transform = `translateX(${currentTranslateX + deltaX}px)`;
+            touchStartX = touchEndX; // Update start for continuous dragging
+        });
+
+        carousel.addEventListener('touchend', () => {
+            // Re-enable CSS transition
+            carousel.style.transition = 'transform 0.5s ease-in-out';
+
+            const swipeDistance = touchEndX - touchStartX;
+
+            if (swipeDistance > minSwipeDistance) {
+                // Swiped right (previous slide)
+                prevSlide();
+            } else if (swipeDistance < -minSwipeDistance) {
+                // Swiped left (next slide)
+                nextSlide();
+            } else {
+                // Not a significant swipe, snap back to current slide
+                updateCarousel();
+            }
+            // Reset touch coordinates
+            touchStartX = 0;
+            touchEndX = 0;
+        });
+
+        // Initialize carousel on load and resize
+        window.addEventListener('load', updateItemsPerView);
+        window.addEventListener('resize', updateItemsPerView);
+
+        // Populate initials for existing cards
+        document.querySelectorAll('.review-card').forEach(card => {
+            const nameElement = card.querySelector('h3');
+            const initialsElement = card.querySelector('.profile-initials');
+            if (nameElement && initialsElement) {
+                initialsElement.textContent = generateInitials(nameElement.textContent);
+            }
+        });
+    </script>
+    
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-content">
@@ -1239,10 +1853,6 @@
         </div>
     </div>
 </footer>
-</body>
-</html>
-
-
 
 
 
