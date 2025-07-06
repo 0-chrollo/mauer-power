@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mauer Power | Get Quote</title>
-    <link rel="stylesheet" href="main.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mauer Power | Solar Solutions</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Tailwind CSS for basic styling and responsiveness -->
+     
+        
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="main.css">
+    </head>
 
 <body>
-
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
@@ -18,16 +25,21 @@
             
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">Home</a>
                 </li>
             
                 <li class="nav-item">
                     <a href="services.html" class="nav-link">Services</a>
                 </li>
-              
+
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link">Testimonials</a>
+                </li>
+
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
+
             </ul>
 
 
@@ -59,322 +71,733 @@
 
 
 
-        <style>
+
+
+    <section class="hero">
+        <div class="hero-slideshow">
+            <div class="slide slide-1 active"></div>
+            <div class="slide slide-2"></div>
+
+         
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-tag">PREMIUM SOLAR SOLUTIONS</div>
+            <h1>Harness the <span>Power of the Sun</span></h1>
+            <p>Our high-efficiency solar panels deliver maximum energy savings with industry-leading durability. Start your journey to energy independence today.</p>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</br>
+</br>
+
+    <style>
+        /* --- General Body and Layout Styles --- */
+        .clients {
+            font-family: 'Inter', sans-serif;
+           
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: none;
+         
+            margin: 0;
+        }
     
+        .reviews-section-wrapper {
+            width: 100%;
+            max-width: 1152px; /* Corresponds to max-w-6xl */
+            margin: 0 auto;
+            padding: 2rem 1rem; /* py-8 px-4 */
+        }
     
-            #whatsapp-widget {
-                position: fixed;
-                bottom: 50px;
-                left:20px;
-                z-index: 1000;
+        .slider-container {
+            position: relative;
+        }
+    
+        /* --- Reviews Slider and Cards --- */
+        .reviews-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem; /* space-x-6 */
+            /* UPDATED: Added horizontal padding to create space on the sides */
+            padding: 1rem;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            /* Hide scrollbar for a cleaner look */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+    
+        .reviews-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, and Opera */
+        }
+    
+        .review-card {
+            flex-shrink: 0;
+            width: 91.666667%; /* w-11/12 for mobile */
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 1.5rem; /* p-6 */
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; /* space-y-4 */
+            scroll-snap-align: start;
+        }
+    
+        /* --- Card Content Styling --- */
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem; /* space-x-4 */
+        }
+    
+        .avatar {
+            width: 3rem;  /* w-12 */
+            height: 3rem; /* h-12 */
+            border-radius: 9999px; /* rounded-full */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem; /* text-xl */
+        }
+        .avatar-purple { background-color: #7c3aed; }
+        .avatar-teal { background-color: #14b8a6; }
+        .avatar-red { background-color: #ef4444; }
+        .avatar-blue { background-color: #3b82f6; }
+    
+        .reviewer-info {
+            flex: 1;
+        }
+        
+        .reviewer-name {
+            font-weight: 600; /* font-semibold */
+            color: #1f2937; /* text-gray-800 */
+        }
+    
+        .review-date {
+            font-size: 0.875rem; /* text-sm */
+            color: #6b7280; /* text-gray-500 */
+        }
+        
+        .google-logo {
+            color: #9ca3af; /* text-gray-400 */
+        }
+        
+        .verified-customer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* space-x-2 */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            color: #16a34a; /* text-green-600 */
+        }
+        
+        .verified-customer .fa-check-circle {
+            color: #22c55e; /* text-green-500 */
+        }
+    
+        .star-rating {
+            margin-top: 0.5rem; /* mt-2 */
+            color: #f59e0b; /* text-yellow-400 */
+        }
+    
+        .review-text {
+            color: #4b5563; /* text-gray-600 */
+            line-height: 1.625; /* leading-relaxed */
+        }
+        
+        .read-more {
+            font-weight: 600; /* font-semibold */
+            color: #2563eb; /* text-blue-600 */
+            text-decoration: none;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    
+        /* --- Navigation Buttons --- */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            width: 3rem;  /* w-12 */
+            height: 3rem; /* h-12 */
+            background-color:  #008b7a;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white; /* text-gray-600 */
+            z-index: 10;
+        }
+    
+        .nav-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+    
+        #prev-btn {
+            left: 0;
+            /* UPDATED: Removed horizontal transform to keep the button fully visible */
+            transform: translateY(-50%);
+        }
+    
+        #next-btn {
+            right: 0;
+            /* UPDATED: Removed horizontal transform to keep the button fully visible */
+            transform: translateY(-50%);
+        }
+    
+        /* --- Pagination Dots --- */
+        .pagination-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem; /* space-x-2 */
+            margin-top: 1.5rem; /* mt-6 */
+        }
+    
+        .pagination-dots button {
+            width: 0.75rem; /* w-3 */
+            height: 0.75rem; /* h-3 */
+            border-radius: 9999px; /* rounded-full */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background-color: #d1d5db; /* bg-gray-300 */
+        }
+    
+        .pagination-dots button.active {
+            background-color:  #039785; /* bg-blue-600 */
+        }
+    
+        /* --- Responsive Design (Media Queries) --- */
+        @media (min-width: 768px) { /* md breakpoint */
+            .review-card {
+                width: 40%; /* A bit less than 5/12 to account for gap */
             }
+        }
     
-            #whatsapp-button {
+        @media (min-width: 1024px) { /* lg breakpoint */
+            .review-card {
+                width: 30.5%; /* A bit less than 4/12 to account for gap */
+            }
+        }
+    
+    </style>
+    
+    <section class="clients">
+    
+    <div class="reviews-section-wrapper">
+        <div class="slider-container">
+            <!-- Reviews slider container -->
+            <div id="reviews-container" class="reviews-container">
                 
-                background-color: #25D366;
-                color: white;
-                width: 44px; /* Slightly smaller base size */
-                height: 44px;
-                border-radius: 70%;
-                cursor: pointer;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transform: scale(0);
-                transition: transform 0.3s ease-in-out, box-shadow 0.2s ease;
-            }
-            
-            #whatsapp-button.show {
-                transform: scale(1);
-            }
-    
-            #whatsapp-button:hover {
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-                transform: scale(1.05);
-            }
-    
-            #whatsapp-popup {
-                width: 250px; /* Further decreased width for mobile */
-                background-color: white;
-                border-radius: 10px;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-                overflow: hidden;
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                bottom: 68px;
-                left: 0;
-                opacity: 0;
-                transform: translateY(20px);
-                transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-            }
-            
-            #whatsapp-popup.show {
-                 display: flex;
-                 opacity: 1;
-                 transform: translateY(0);
-            }
-    
-            .popup-header {
-                background-color: #075E54;
-                color: white;
-                padding: 10px 12px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            
-            .popup-header-content {
-                 display: flex;
-                 align-items: center;
-                 overflow: hidden;
-            }
-    
-            .popup-header-icon {
-                width: 34px;
-                height: 34px;
-                background-color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-right: 10px;
-                flex-shrink: 0;
-            }
-    
-            .popup-header-icon svg {
-                width: 18px;
-                height: 18px;
-                color: #075E54;
-            }
-    
-            .popup-header-text h3 {
-                font-weight: 600;
-                font-size: 0.85rem;
-                margin: 0;
-            }
-    
-            .popup-header-text p {
-                font-size: 0.7rem;
-                opacity: 0.9;
-                line-height: 1.2;
-                margin: 0;
-            }
-    
-            .close-btn {
-                background: none;
-                border: none;
-                color: white;
-                cursor: pointer;
-                font-size: 1.4rem;
-                opacity: 0.8;
-                padding: 0 4px;
-            }
-    
-            .chat-area {
-                padding: 12px;
-                background-color: #E5DDD5;
-                background-image: url('https://i.imgur.com/yJ78O2S.png');
-                flex-grow: 1;
-                min-height: 90px;
-            }
-            
-            .message-bubble {
-                background-color: white;
-                padding: 7px 10px;
-                border-radius: 7px;
-                max-width: 90%;
-                box-shadow: 0 1px 1px rgba(0,0,0,0.08);
-            }
-            
-            .message-bubble p {
-                margin: 0;
-                font-size: 0.8rem;
-                line-height: 1.3;
-            }
-    
-            .start-chat-area {
-                padding: 10px 12px;
-                background-color: #f0f2f5;
-                text-align: center;
-            }
-    
-            .start-chat-btn {
-                background-color: #25D366;
-                color: white;
-                text-decoration: none;
-                padding: 8px 16px;
-                border-radius: 20px;
-                font-weight: 500;
-                font-size: 0.8rem;
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                transition: background-color 0.2s;
-            }
-    
-            .start-chat-btn:hover {
-                background-color: #128C7E;
-            }
-    
-            /* Responsive styles for desktop (md breakpoint: 768px) */
-            @media (min-width: 768px) {
-                #whatsapp-button {
-                    width: 56px;
-                    height: 56px;
-                }
-                #whatsapp-popup {
-                    width: 320px; /* Larger width on desktop */
-                    bottom: 80px;
-                }
-                .popup-header {
-                    padding: 16px;
-                }
-                .popup-header-icon {
-                    width: 40px;
-                    height: 40px;
-                }
-                .popup-header-icon svg {
-                    width: 22px;
-                    height: 22px;
-                }
-                .popup-header-text h3 {
-                    font-size: 1rem;
-                }
-                .popup-header-text p {
-                    font-size: 0.8rem;
-                }
-                .chat-area {
-                    padding: 20px;
-                    min-height: 120px;
-                }
-                .message-bubble {
-                    padding: 10px 14px;
-                }
-                .message-bubble p {
-                    font-size: 0.9rem;
-                }
-                .start-chat-area {
-                    padding: 16px;
-                }
-                .start-chat-btn {
-                    padding: 12px 24px;
-                    font-size: 0.95rem;
-                }
-            }
-        </style>
-
-    
-
-    
-        <!-- WhatsApp Widget -->
-        <div id="whatsapp-widget">
-            <!-- Chat Popup Window -->
-            <div id="whatsapp-popup">
-                <div class="popup-header">
-                    <div class="popup-header-content">
-                        <div class="popup-header-icon">
-                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                <!-- Review Card 1 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <div class="avatar avatar-purple">LM</div>
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Lucas Mu</p>
+                            <p class="review-date">2 days ago</p>
                         </div>
-                        <div class="popup-header-text">
-                            <h3>Chat with Us</h3>
-                            <p>Questions? Let's talk.</p>
+                        <div class="google-logo">
+                           <i class="fa-brands fa-google"></i> Google
                         </div>
                     </div>
-                    <button class="close-btn" id="close-popup">&times;</button>
-                </div>
-                <div class="chat-area">
-                    <div class="message-bubble">
-                        <p>Hi! How can we help?</p>
+                    <div>
+                        <div class="verified-customer">
+                           <i class="fas fa-check-circle"></i>
+                           <span>Verified Customer</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
                     </div>
+                    <p class="review-text">
+                        Energy mate solutions provides the best energy service in Lahore. Their team is professional and highly efficient. I am extremely satisfied with their...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
                 </div>
-                <div class="start-chat-area">
-                    <!-- IMPORTANT: Replace '1234567890' with your actual WhatsApp number -->
-                    <a href="https://wa.me/1234567890" target="_blank" class="start-chat-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.52.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                        Start Chat
-                    </a>
+    
+                <!-- Review Card 2 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <div class="avatar avatar-teal">AK</div>
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Azar Khan</p>
+                            <p class="review-date">5 days ago</p>
+                        </div>
+                         <div class="google-logo">
+                           <i class="fa-brands fa-google"></i> Google
+                        </div>
+                    </div>
+                    <div>
+                        <div class="verified-customer">
+                           <i class="fas fa-check-circle"></i>
+                           <span>Verified Customer</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Fantastic service! The team was very professional and delivered exactly what was promised. I'm very impressed with the quality and efficiency. Highly...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
                 </div>
+    
+                <!-- Review Card 3 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <div class="avatar avatar-red">JS</div>
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Jane Smith</p>
+                            <p class="review-date">1 week ago</p>
+                        </div>
+                         <div class="google-logo">
+                           <i class="fa-brands fa-google"></i> Google
+                        </div>
+                    </div>
+                    <div>
+                        <div class="verified-customer">
+                           <i class="fas fa-check-circle"></i>
+                           <span>Verified Customer</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        A truly seamless experience from start to finish. The customer support was top-notch and the final product exceeded my expectations. I would definitely...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+    
+                 <!-- Review Card 4 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <div class="avatar avatar-blue">MB</div>
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Mike Brown</p>
+                            <p class="review-date">2 weeks ago</p>
+                        </div>
+                         <div class="google-logo">
+                           <i class="fa-brands fa-google"></i> Google
+                        </div>
+                    </div>
+                    <div>
+                        <div class="verified-customer">
+                           <i class="fas fa-check-circle"></i>
+                           <span>Verified Customer</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Incredible attention to detail. The installation was quick and clean. I'm very happy with the service and have already recommended them to my friends...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+    
             </div>
     
-            <!-- Floating Button -->
-            <div id="whatsapp-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.52.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                </svg>
-            </div>
+            <!-- Navigation Buttons -->
+            <button id="prev-btn" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+            <button id="next-btn" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
     
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const whatsappButton = document.getElementById('whatsapp-button');
-                const whatsappPopup = document.getElementById('whatsapp-popup');
-                const closePopupButton = document.getElementById('close-popup');
+        <!-- Pagination Dots -->
+        <div id="pagination-dots" class="pagination-dots">
+            <!-- Dots will be generated by JavaScript -->
+        </div>
+    </div>
     
-                // --- Main Change: Auto-open popup after 3 seconds ---
-                setTimeout(() => {
-                    whatsappPopup.classList.add('show');
-                    whatsappButton.classList.add('show');
-                }, 3000);
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('reviews-container');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const paginationDotsContainer = document.getElementById('pagination-dots');
+            
+            const cards = Array.from(container.children);
+            let cardCount = cards.length;
+            let currentIndex = 0;
     
-                // Toggle popup window when the floating button is clicked
-                whatsappButton.addEventListener('click', function(event) {
-                    event.stopPropagation();
-                    whatsappPopup.classList.toggle('show');
-                });
+            if (cardCount === 0) return;
     
-                // Close popup window with the 'x' button
-                closePopupButton.addEventListener('click', function() {
-                    whatsappPopup.classList.remove('show');
-                });
+            // --- Pagination Dots ---
+            function createPaginationDots() {
+                for (let i = 0; i < cardCount; i++) {
+                    const dot = document.createElement('button');
+                    dot.setAttribute('data-index', i);
+                    dot.addEventListener('click', () => scrollToCard(i));
+                    paginationDotsContainer.appendChild(dot);
+                }
+            }
+    
+            function updatePaginationDots() {
+                const dots = paginationDotsContainer.children;
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].classList.toggle('active', i === currentIndex);
+                }
+            }
+    
+            // --- Scrolling Logic ---
+            function getScrollAmount() {
+                const card = cards[0];
+                const cardStyle = window.getComputedStyle(card);
+                const containerStyle = window.getComputedStyle(container);
+                const cardMargin = parseFloat(containerStyle.gap) || parseFloat(cardStyle.marginRight);
+                return card.offsetWidth + cardMargin;
+            }
+    
+            function scrollToCard(index) {
+                if (index >= 0 && index < cardCount) {
+                    const scrollAmount = getScrollAmount();
+                    container.scrollLeft = index * scrollAmount;
+                    currentIndex = index;
+                    updateUIVisibility();
+                }
+            }
+    
+            // --- Button Click Handlers ---
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < cardCount - 1) {
+                    scrollToCard(currentIndex + 1);
+                }
+            });
+    
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    scrollToCard(currentIndex - 1);
+                }
+            });
+    
+            // --- UI Visibility and Updates ---
+            function updateUIVisibility() {
+                // Hide/show prev/next buttons
+                prevBtn.style.display = currentIndex === 0 ? 'none' : 'flex';
                 
-                // Close popup if clicked outside of it
-                window.addEventListener('click', function(e) {
-                    if (whatsappPopup.classList.contains('show') && !whatsappPopup.contains(e.target) && !whatsappButton.contains(e.target)) {
-                        whatsappPopup.classList.remove('show');
+                const isAtEnd = container.scrollWidth - container.scrollLeft <= container.clientWidth + 1;
+                nextBtn.style.display = isAtEnd ? 'none' : 'flex';
+                
+                updatePaginationDots();
+            }
+    
+            // --- Intersection Observer for swipe/manual scroll detection ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const cardIndex = cards.indexOf(entry.target);
+                        if (cardIndex !== -1) {
+                            currentIndex = cardIndex;
+                            updateUIVisibility();
+                        }
                     }
                 });
+            }, {
+                root: container,
+                threshold: 0.6 // Card is active when 60% is visible
             });
-        </script>
+    
+            cards.forEach(card => observer.observe(card));
+            
+            // --- Initial Setup ---
+            createPaginationDots();
+            updateUIVisibility();
+    
+            // Recalculate on window resize
+            window.addEventListener('resize', () => {
+                scrollToCard(currentIndex);
+            });
+        });
+    </script>
+    
+    
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <style>
+    
+    
+        /* Footer Styles */
+        .footer {
+            background-color:#02655aee;
+            color: #ffffff;
+            padding: 40px 0 20px;
+            margin-top: auto;
+        }
+    
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+    
+        .footer-section h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+    
+        .footer-section p,
+        .footer-section li {
+            color: #bdc3c7;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+    
+        .footer-section ul {
+            list-style: none;
+        }
+    
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+    
+        .footer-section ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+    
+        .footer-section ul li a:hover {
+            color: #3498db;
+        }
+    
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    
+        .contact-info i {
+            width: 20px;
+            margin-right: 10px;
+            color: #3498db;
+        }
+    
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+    
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .social-links a:hover {
+            background-color: #3498db;
+        }
+    
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            text-align: center;
+        }
+    
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+    
+        .footer-bottom p {
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+    
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    
+        .footer-bottom-links a {
+            color: #95a5a6;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+    
+        .footer-bottom-links a:hover {
+            color: #3498db;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-bottom-links {
+                justify-content: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .footer {
+                padding: 30px 0 15px;
+            }
+            
+            .footer-container {
+                padding: 0 15px;
+            }
+            
+            .footer-section h3 {
+                font-size: 1.1em;
+            }
+            
+            .footer-section p,
+            .footer-section li {
+                font-size: 0.9em;
+            }
+            
+            .social-links a {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+            }
+        }
+    </style>
+    
+    
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info Section -->
+                <div class="footer-section">
+                    <h3>About Company</h3>
+                    <p>We are a leading professional services company committed to delivering excellence and innovation to our clients worldwide. Our expertise spans multiple industries with a focus on quality and integrity.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">TW</a>
+                        <a href="#">IN</a>
+                        <a href="#">YT</a>
+                    </div>
+                </div>
+    
+                <!-- Services Section -->
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">Business Consulting</a></li>
+                        <li><a href="#">Strategic Planning</a></li>
+                        <li><a href="#">Project Management</a></li>
+                        <li><a href="#">Financial Advisory</a></li>
+                        <li><a href="#">Risk Management</a></li>
+                        <li><a href="#">Compliance Services</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Quick Links Section -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">News & Updates</a></li>
+                        <li><a href="#">Career Opportunities</a></li>
+                    </ul>
+                </div>
+    
+            </div>
+    
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Mauer Power. All rights reserved. Powered by Lucas Mkohlakali</p>
+                   
+                </div>
+            </div>
+        </div>.
+    </footer>
+    
+    
     </body>
+    <script src="scripts.js"></script>
     </html>
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-<script src="scripts.js"></script>
-</html>
-
+    
+    
+    
+    
+    
+    

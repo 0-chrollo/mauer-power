@@ -1,62 +1,797 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Icon List</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mauer Power | Solar Solutions</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Tailwind CSS for basic styling and responsiveness -->
+     
+        
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="mauer.webp" alt="Logo">
+                <span class="logo-text">Mauer Power</span>
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+            
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="reviews.html" class="nav-link">Testimonials</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+
+            </ul>
 
 
-    .icon-list {
-      display: grid;
-      gap: 25px;
-      padding: 20px;
-    }
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    /* Desktop 3x3 grid */
-    @media (min-width: 768px) {
-      .icon-list {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
 
-    .icon-item {
-      display: flex;
-      align-items: flex-start; /* Aligns icon with the top of the text block */
-      gap: 16px; /* Increased gap slightly for better spacing */
-      text-align: left;
-      font-family: sans-serif;
-      color:black;
-    }
 
-    .icon {
-      color:rgb(19, 61, 167);
-      background-color:rgba(255, 0, 0, 0.136);
-      font-size: 20px; /* Slightly larger icon */
-      /* margin-top was removed for cleaner alignment */
-    }
 
-    .icon-item p {
-      font-size: 2vh;
-        margin: 0; /* Removes default paragraph margin */
-    }
 
-  </style>
 
-  <div class="icon-list">
-    <div class="icon-item">
-      <i class="far fa-square icon"></i>
-      <p><b>High-Quality Solar Panels:</b> We provide top-tier, efficient solar panels tailored to your energy needs.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="hero">
+        <div class="hero-slideshow">
+            <div class="slide slide-1 active"></div>
+            <div class="slide slide-2"></div>
+
+         
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-tag">PREMIUM SOLAR SOLUTIONS</div>
+            <h1>Harness the <span>Power of the Sun</span></h1>
+            <p>Our high-efficiency solar panels deliver maximum energy savings with industry-leading durability. Start your journey to energy independence today.</p>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</br>
+</br>
+
+    <style>
+        /* --- General Body and Layout Styles --- */
+        .clients {
+            font-family: 'Inter', sans-serif;
+           
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: none;
+         
+            margin: 0;
+        }
+    
+        .reviews-section-wrapper {
+            width: 100%;
+            max-width: 1152px; /* Corresponds to max-w-6xl */
+            margin: 0 auto;
+            padding: 2rem 1rem; /* py-8 px-4 */
+        }
+    
+        .slider-container {
+            position: relative;
+        }
+    
+        /* --- Reviews Slider and Cards --- */
+        .reviews-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem; /* space-x-6 */
+            /* UPDATED: Added horizontal padding to create space on the sides */
+            padding: 1rem;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            /* Hide scrollbar for a cleaner look */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+    
+        .reviews-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, and Opera */
+        }
+    
+        .review-card {
+            flex-shrink: 0;
+            width: 91.666667%; /* w-11/12 for mobile */
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 1.5rem; /* p-6 */
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; /* space-y-4 */
+            scroll-snap-align: start;
+        }
+    
+        /* --- Card Content Styling --- */
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem; /* space-x-4 */
+        }
+    
+        .avatar {
+            width: 3rem;  /* w-12 */
+            height: 3rem; /* h-12 */
+            border-radius: 9999px; /* rounded-full */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem; /* text-xl */
+        }
+        .avatar-purple { background-color: #7c3aed; }
+        .avatar-teal { background-color: #14b8a6; }
+        .avatar-red { background-color: #ef4444; }
+        .avatar-blue { background-color: #3b82f6; }
+    
+        .reviewer-info {
+            flex: 1;
+        }
+        
+        .reviewer-name {
+            font-weight: 600; /* font-semibold */
+            color: #1f2937; /* text-gray-800 */
+        }
+    
+        .review-date {
+            font-size: 0.875rem; /* text-sm */
+            color: #6b7280; /* text-gray-500 */
+        }
+        
+        .google-logo {
+            color: #9ca3af; /* text-gray-400 */
+        }
+        
+        .verified-customer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* space-x-2 */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            color: #16a34a; /* text-green-600 */
+        }
+        
+        .verified-customer .fa-check-circle {
+            color: #22c55e; /* text-green-500 */
+        }
+    
+        .star-rating {
+            margin-top: 0.5rem; /* mt-2 */
+            color: #f59e0b; /* text-yellow-400 */
+        }
+    
+        .review-text {
+            color: #4b5563; /* text-gray-600 */
+            line-height: 1.625; /* leading-relaxed */
+        }
+        
+        .read-more {
+            font-weight: 600; /* font-semibold */
+            color: #2563eb; /* text-blue-600 */
+            text-decoration: none;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    
+        /* --- Navigation Buttons --- */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            width: 3rem;  /* w-12 */
+            height: 3rem; /* h-12 */
+            background-color:  #008b7a;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white; /* text-gray-600 */
+            z-index: 10;
+        }
+    
+        .nav-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+    
+        #prev-btn {
+            left: 0;
+            /* UPDATED: Removed horizontal transform to keep the button fully visible */
+            transform: translateY(-50%);
+        }
+    
+        #next-btn {
+            right: 0;
+            /* UPDATED: Removed horizontal transform to keep the button fully visible */
+            transform: translateY(-50%);
+        }
+    
+        /* --- Pagination Dots --- */
+        .pagination-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem; /* space-x-2 */
+            margin-top: 1.5rem; /* mt-6 */
+        }
+    
+        .pagination-dots button {
+            width: 0.75rem; /* w-3 */
+            height: 0.75rem; /* h-3 */
+            border-radius: 9999px; /* rounded-full */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background-color: #d1d5db; /* bg-gray-300 */
+        }
+    
+        .pagination-dots button.active {
+            background-color:  #039785; /* bg-blue-600 */
+        }
+    
+        /* --- Responsive Design (Media Queries) --- */
+        @media (min-width: 768px) { /* md breakpoint */
+            .review-card {
+                width: 40%; /* A bit less than 5/12 to account for gap */
+            }
+        }
+    
+        @media (min-width: 1024px) { /* lg breakpoint */
+            .review-card {
+                width: 30.5%; /* A bit less than 4/12 to account for gap */
+            }
+        }
+    
+    </style>
+    
+    <section class="clients">
+    
+    <div class="reviews-section-wrapper">
+        <div class="slider-container">
+            <!-- Reviews slider container -->
+            <div id="reviews-container" class="reviews-container">
+                
+                <!-- Review Card 1 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <div class="avatar avatar-purple">LM</div>
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Lucas Mu</p>
+                            <p class="review-date">2 days ago</p>
+                        </div>
+                        <div class="google-logo">
+                           <i class="fa-brands fa-google"></i> Google
+                        </div>
+                    </div>
+                    <div>
+                        <div class="verified-customer">
+                           <i class="fas fa-check-circle"></i>
+                           <span>Verified Customer</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Energy mate solutions provides the best energy service in Lahore. Their team is professional and highly efficient. I am extremely satisfied with their...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+    
+                <!-- Review Card 2 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <div class="avatar avatar-teal">AK</div>
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Azar Khan</p>
+                            <p class="review-date">5 days ago</p>
+                        </div>
+                         <div class="google-logo">
+                           <i class="fa-brands fa-google"></i> Google
+                        </div>
+                    </div>
+                    <div>
+                        <div class="verified-customer">
+                           <i class="fas fa-check-circle"></i>
+                           <span>Verified Customer</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Fantastic service! The team was very professional and delivered exactly what was promised. I'm very impressed with the quality and efficiency. Highly...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+    
+                <!-- Review Card 3 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <div class="avatar avatar-red">JS</div>
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Jane Smith</p>
+                            <p class="review-date">1 week ago</p>
+                        </div>
+                         <div class="google-logo">
+                           <i class="fa-brands fa-google"></i> Google
+                        </div>
+                    </div>
+                    <div>
+                        <div class="verified-customer">
+                           <i class="fas fa-check-circle"></i>
+                           <span>Verified Customer</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        A truly seamless experience from start to finish. The customer support was top-notch and the final product exceeded my expectations. I would definitely...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+    
+                 <!-- Review Card 4 -->
+                <div class="review-card">
+                    <div class="card-header">
+                        <div class="avatar avatar-blue">MB</div>
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Mike Brown</p>
+                            <p class="review-date">2 weeks ago</p>
+                        </div>
+                         <div class="google-logo">
+                           <i class="fa-brands fa-google"></i> Google
+                        </div>
+                    </div>
+                    <div>
+                        <div class="verified-customer">
+                           <i class="fas fa-check-circle"></i>
+                           <span>Verified Customer</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Incredible attention to detail. The installation was quick and clean. I'm very happy with the service and have already recommended them to my friends...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+    
+            </div>
+    
+            <!-- Navigation Buttons -->
+            <button id="prev-btn" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+            <button id="next-btn" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    
+        <!-- Pagination Dots -->
+        <div id="pagination-dots" class="pagination-dots">
+            <!-- Dots will be generated by JavaScript -->
+        </div>
     </div>
-    <div class="icon-item">
-      <i class="far fa-square icon"></i>
-      <p><b>Expert Maintenance:</b> Our team offers comprehensive maintenance and support to ensure optimal performance.</p>
-    </div>
-    <div class="icon-item">
-      <i class="far fa-square icon"></i>
-      <p><b>Energy Storage Solutions:</b> We install reliable battery backup systems so you have power day and night.</p>
-    </div>
-  </div>
-</body>
-</html>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('reviews-container');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const paginationDotsContainer = document.getElementById('pagination-dots');
+            
+            const cards = Array.from(container.children);
+            let cardCount = cards.length;
+            let currentIndex = 0;
+    
+            if (cardCount === 0) return;
+    
+            // --- Pagination Dots ---
+            function createPaginationDots() {
+                for (let i = 0; i < cardCount; i++) {
+                    const dot = document.createElement('button');
+                    dot.setAttribute('data-index', i);
+                    dot.addEventListener('click', () => scrollToCard(i));
+                    paginationDotsContainer.appendChild(dot);
+                }
+            }
+    
+            function updatePaginationDots() {
+                const dots = paginationDotsContainer.children;
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].classList.toggle('active', i === currentIndex);
+                }
+            }
+    
+            // --- Scrolling Logic ---
+            function getScrollAmount() {
+                const card = cards[0];
+                const cardStyle = window.getComputedStyle(card);
+                const containerStyle = window.getComputedStyle(container);
+                const cardMargin = parseFloat(containerStyle.gap) || parseFloat(cardStyle.marginRight);
+                return card.offsetWidth + cardMargin;
+            }
+    
+            function scrollToCard(index) {
+                if (index >= 0 && index < cardCount) {
+                    const scrollAmount = getScrollAmount();
+                    container.scrollLeft = index * scrollAmount;
+                    currentIndex = index;
+                    updateUIVisibility();
+                }
+            }
+    
+            // --- Button Click Handlers ---
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < cardCount - 1) {
+                    scrollToCard(currentIndex + 1);
+                }
+            });
+    
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    scrollToCard(currentIndex - 1);
+                }
+            });
+    
+            // --- UI Visibility and Updates ---
+            function updateUIVisibility() {
+                // Hide/show prev/next buttons
+                prevBtn.style.display = currentIndex === 0 ? 'none' : 'flex';
+                
+                const isAtEnd = container.scrollWidth - container.scrollLeft <= container.clientWidth + 1;
+                nextBtn.style.display = isAtEnd ? 'none' : 'flex';
+                
+                updatePaginationDots();
+            }
+    
+            // --- Intersection Observer for swipe/manual scroll detection ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const cardIndex = cards.indexOf(entry.target);
+                        if (cardIndex !== -1) {
+                            currentIndex = cardIndex;
+                            updateUIVisibility();
+                        }
+                    }
+                });
+            }, {
+                root: container,
+                threshold: 0.6 // Card is active when 60% is visible
+            });
+    
+            cards.forEach(card => observer.observe(card));
+            
+            // --- Initial Setup ---
+            createPaginationDots();
+            updateUIVisibility();
+    
+            // Recalculate on window resize
+            window.addEventListener('resize', () => {
+                scrollToCard(currentIndex);
+            });
+        });
+    </script>
+    
+    
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <style>
+    
+    
+        /* Footer Styles */
+        .footer {
+            background-color:#02655aee;
+            color: #ffffff;
+            padding: 40px 0 20px;
+            margin-top: auto;
+        }
+    
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+    
+        .footer-section h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+    
+        .footer-section p,
+        .footer-section li {
+            color: #bdc3c7;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+    
+        .footer-section ul {
+            list-style: none;
+        }
+    
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+    
+        .footer-section ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+    
+        .footer-section ul li a:hover {
+            color: #3498db;
+        }
+    
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    
+        .contact-info i {
+            width: 20px;
+            margin-right: 10px;
+            color: #3498db;
+        }
+    
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+    
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .social-links a:hover {
+            background-color: #3498db;
+        }
+    
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            text-align: center;
+        }
+    
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+    
+        .footer-bottom p {
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+    
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    
+        .footer-bottom-links a {
+            color: #95a5a6;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+    
+        .footer-bottom-links a:hover {
+            color: #3498db;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-bottom-links {
+                justify-content: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .footer {
+                padding: 30px 0 15px;
+            }
+            
+            .footer-container {
+                padding: 0 15px;
+            }
+            
+            .footer-section h3 {
+                font-size: 1.1em;
+            }
+            
+            .footer-section p,
+            .footer-section li {
+                font-size: 0.9em;
+            }
+            
+            .social-links a {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+            }
+        }
+    </style>
+    
+    
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info Section -->
+                <div class="footer-section">
+                    <h3>About Company</h3>
+                    <p>We are a leading professional services company committed to delivering excellence and innovation to our clients worldwide. Our expertise spans multiple industries with a focus on quality and integrity.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">TW</a>
+                        <a href="#">IN</a>
+                        <a href="#">YT</a>
+                    </div>
+                </div>
+    
+                <!-- Services Section -->
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">Business Consulting</a></li>
+                        <li><a href="#">Strategic Planning</a></li>
+                        <li><a href="#">Project Management</a></li>
+                        <li><a href="#">Financial Advisory</a></li>
+                        <li><a href="#">Risk Management</a></li>
+                        <li><a href="#">Compliance Services</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Quick Links Section -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">News & Updates</a></li>
+                        <li><a href="#">Career Opportunities</a></li>
+                    </ul>
+                </div>
+    
+            </div>
+    
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Mauer Power. All rights reserved. Powered by Lucas Mkohlakali</p>
+                   
+                </div>
+            </div>
+        </div>.
+    </footer>
+    
+    
+    </body>
+    <script src="scripts.js"></script>
+    </html>
+    
