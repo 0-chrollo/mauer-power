@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Tailwind CSS for basic styling and responsiveness -->
+ 
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="styles.css">
@@ -997,6 +1000,159 @@
 
 
 
+    <style>
+
+
+        .features-grid {
+          
+            display: grid;
+            grid-template-columns: 1fr; /* Default to 1 column */
+            gap: 3.5rem; /* Space between grid items */
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns for desktops */
+            }
+        }
+
+        .feature-item {
+            /* Centers all content within the item */
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem; /* 48px */
+            color:  #008b7a; /* A warm, solar yellow */
+            margin-bottom: 1.5rem; /* Space below the icon */
+        }
+
+        .feature-text-container {
+            position: relative; /* Needed for the ::before pseudo-element */
+            padding-left: 2rem; /* Space for the vertical line */
+            text-align: left; /* Aligns paragraph text to the left */
+            display: inline-block; /* Allows the container to fit its content width */
+            margin-bottom: 1.5rem; /* Space below the text block */
+        }
+
+        /* The modern vertical line */
+        .feature-text-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px; /* Adjust vertical alignment */
+            bottom: 5px; /* Adjust vertical alignment */
+            width: 4px;
+            background-color: #008b7a; /* Match the icon color */
+            border-radius: 2px; /* Rounded ends for a modern look */
+        }
+
+        /* The horizontal divider line */
+        .feature-divider {
+            width: 50%;
+            height: 2px;
+            background-color:  #008b7a; /* A light gray color */
+            margin: 0 auto; /* Centers the line horizontally */
+        }
+        
+        .feature-title {
+            font-size: 1.25rem; /* 20px */
+            font-weight: 600;
+            color: #1e293b; /* Dark slate color for text */
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-description {
+            color: #475569; /* Lighter slate color for description */
+            line-height: 1.6;
+        }
+
+    </style>
+
+<div class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto px-6 py-20">
+
+        <!-- The 3x3 Features Grid -->
+        <div class="features-grid">
+
+            <!-- Feature Item 1: Cost Savings -->
+            <div class="feature-item">
+                <i class="fas fa-coins feature-icon"></i>
+                <div class="feature-text-container">
+                    <h3 class="feature-title">Reduce Energy Bills</h3>
+                    <p class="feature-description">
+                        Generate your own free electricity from the sun and significantly lower your monthly utility bills.
+                    </p>
+                </div>
+                <div class="feature-divider"></div>
+            </div>
+
+            <!-- Feature Item 2: Eco-Friendly -->
+            <div class="feature-item">
+                <i class="fas fa-leaf feature-icon"></i>
+                <div class="feature-text-container">
+                     <h3 class="feature-title">Eco-Friendly</h3>
+                    <p class="feature-description">
+                        Solar power is a clean, renewable energy source that reduces your carbon footprint and helps protect the environment.
+                    </p>
+                </div>
+                <div class="feature-divider"></div>
+            </div>
+
+            <!-- Feature Item 3: Energy Independence -->
+            <div class="feature-item">
+                <i class="fas fa-plug-circle-check feature-icon"></i>
+                <div class="feature-text-container">
+                     <h3 class="feature-title">Energy Independence</h3>
+                    <p class="feature-description">
+                       Decrease your reliance on the grid and protect yourself from rising electricity prices and power outages.
+                    </p>
+                </div>
+                <div class="feature-divider"></div>
+            </div>
+
+         
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style>
     /* --- General Body and Layout Styles --- */
@@ -1677,9 +1833,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>.
 </footer>
-
 
 
 </body>
