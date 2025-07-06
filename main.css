@@ -241,11 +241,12 @@ body {
 .hero {
     color: var(--light);
     background-image: url('https://www.prysmian.com/sites/www.prysmian.com/files/2024-01/header-solar-energy-photovoltaics-1150x650.png');
-
+    background-repeat: no-repeat;
     position: relative;
-    height: 90vh; 
+    height:90vh; 
+    background-size: cover;
     min-height: 735px; 
-    max-height: 900px; 
+    max-height: 800px; 
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -271,7 +272,7 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0rem;
     position: relative;
     z-index: 2;
     animation: fadeInUp 1s ease-out both;
@@ -303,9 +304,9 @@ body {
 
 .hero h1 {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
+    font-weight: 550;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
     max-width: 800px;
 }
 
@@ -320,7 +321,7 @@ body {
 .hero p {
     font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.6;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     max-width: 600px;
     opacity: 0.9;
     font-weight: 300;
@@ -347,7 +348,7 @@ body {
     .hero {
         min-height: 100px;
         height: auto;
-        padding: 100px 0;
+        padding:80px 0;
     }
 }
 
