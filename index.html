@@ -509,7 +509,7 @@
 
     .section-header .title {
         color:#038977;
-        font-size: 1.2rem; /* text-4xl */
+        font-size: 1.8rem; /* text-4xl */
         font-weight: 600; /* font-bold */
         font-family:Georgia;
     }
@@ -688,7 +688,7 @@
 
     @media (min-width: 768px) { /* md breakpoint */
         .title {
-            font-size: 2rem; /* md:text-5xl */
+            font-size: 3.5rem; /* md:text-5xl */
         }
         .slider-item {
             width: 30vw;
@@ -714,7 +714,7 @@
 
 <header class="section-header">
     <h3 class="subtitle"></h3>
-    <h2 class="title"><i class="fa-solid fa-bolt" style="color: #04c4aa; font-size: 3vh;"></i>
+    <h2 class="title"><i class="fa-solid fa-bolt" style="color: #04c4aa; font-size: 4vh;"></i>
 
         Mauer Power recent projects</h2>
 </header>
@@ -1054,7 +1054,7 @@
         /* The horizontal divider line */
         .feature-divider {
             width: 50%;
-            height: 2px;
+            height: 5px;
             background-color:  #008b7a; /* A light gray color */
             margin: 0 auto; /* Centers the line horizontally */
         }
@@ -1133,7 +1133,7 @@
 
 
 
-
+</br>
 
 
 
@@ -1353,6 +1353,180 @@
     }
 
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+        
+        .review-us {
+      
+           
+            width: 100%;
+            max-width: 400px;
+            min-width: 300px;
+           
+            padding: 0px 10px;
+            margin-left: 30px;
+            
+        }
+        
+        @media (min-width: 768px) {
+            .review-us {
+                max-width: 500px;
+                padding: 50px 40px;
+                margin-left: 40px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .review-us {
+                max-width: 500px;
+                padding: 10px 50px;
+                margin-left: 220px;
+            }
+            
+            .section-title {
+                font-size: 50px;
+                color: #008b7a;
+              
+            }
+            
+            .rating-number {
+                font-size: 38px;
+            }
+            
+            .google-reviews {
+                margin-bottom: 0px;
+            }
+            
+            .google-logo {
+                font-size: 26px;
+            }
+            
+            .stars .star {
+                font-size: 22px;
+            }
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        .google-reviews {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .google-logo {
+            font-size: 24px;
+            font-weight: 500;
+            color: #333;
+            margin-right: 8px;
+        }
+        
+        .google-g { color: #4285f4; }
+        .google-o1 { color: #ea4335; }
+        .google-o2 { color: #fbbc05; }
+        .google-g2 { color: #4285f4; }
+        .google-l { color: #34a853; }
+        .google-e { color: #ea4335; }
+        
+        .rating-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .rating-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-right: 10px;
+        }
+        
+        .stars {
+            margin-right: 10px;
+        }
+        
+        .star {
+            color: #ffc107;
+            font-size: 20px;
+            margin-right: 2px;
+        }
+        
+        .review-count {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .review-button {
+            background-color:#008b7a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .review-button:hover {
+            background-color: #3367d6;
+        }
+    </style>
+
+    <div class="review-us">
+        <h2 class="section-title" style=" color: #008b7a;">What Our Customers Say <i class="fas fa-arrow-circle-down"></i></h2>
+        <div style="margin: 10px 10px;height: 7px; width:15vh; background-color: #03a996;">
+        </div>
+        <div class="google-reviews">
+            <span class="google-logo">
+                <span class="google-g">G</span><span class="google-o1">o</span><span class="google-o2">o</span><span class="google-g2">g</span><span class="google-l">l</span><span class="google-e">e</span>
+            </span>
+            <span style="color: #333; font-size: 24px; font-weight: 400;">Reviews</span>
+        </div>
+        
+        <div class="rating-container">
+            <span class="rating-number">5.0</span>
+            <div class="stars">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+            </div>
+            <span class="review-count">(16,338)</span>
+        </div>
+        
+        <button class="review-button">Review us on Google</button>
+    </div>
+
+</html>
+
+
+
+
 
 <section class="clients">
 
