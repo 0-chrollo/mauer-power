@@ -18,7 +18,7 @@
 <body>
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <img src="mauer.webp" alt="Logo">
                 <span class="logo-text">Mauer Power</span>
             </a>
@@ -56,33 +56,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <section class="hero">
         <div class="hero-slideshow">
             <div class="slide slide-1 active"></div>
@@ -90,7 +63,7 @@
         </div>
 
         <div class="hero-content">
-            <div class="hero-tag">OUR PREMIUM SERVICES</div>
+            <div class="hero-tag">Mauer Power Services</div>
             <h1>Harness the <span>Power of the Sun</span></h1>
             <ul>
 
@@ -110,9 +83,6 @@
 
         
     </section>
-
-
-
 
 <style>
 
@@ -158,6 +128,441 @@
 
 
 
+
+<section class="our-services">
+
+
+    <style>
+        /* Base Styles */
+        .our-services{
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* A light, clean background */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            -webkit-font-smoothing: antialiased; /* Better font rendering */
+            -moz-osx-font-smoothing: grayscale; /* Better font rendering */
+        }
+
+        .containers {
+            max-width: 1280px; /* Max width for desktop */
+            margin: 0 auto;
+            padding: 0 1rem; /* Slightly reduced horizontal padding on mobile for wider cards */
+        }
+
+        /* Section Specific Styles */
+        .pro-section {
+            background-color: #ffffff;
+            padding: 4rem 0; /* Vertical padding for sections */
+        }
+
+        .pro-section-dark {
+            background-color: #016a5e; /* Slate 900 for a premium dark section */
+            padding: 4rem 0; /* Vertical padding for sections */
+            color: #ffffff;
+        }
+
+        .pro-heading {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 2rem; /* Default for mobile/smaller screens */
+            line-height: 1.2; /* Tighter line height for headings */
+            color: #018172; /* Slate 800 */
+            margin-bottom: 1rem;
+        }
+        .pro-section-dark .pro-heading {
+            color: #ffffff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem; /* Spacing below header */
+        }
+
+        .section-header p {
+            font-size: 1.120rem; /* Larger text for readability */
+            margin-top: 1rem;
+            max-width: 48rem; /* Constrain text width */
+            margin-left: auto;
+            margin-right: auto;
+            color:  #012c267c; /* Slate 600 */
+        }
+        .pro-section-dark .section-header p {
+            color: #94a3b8; /* Slate 400 */
+        }
+
+        /* Card Styles for Solutions */
+        .solution-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Default to 1 column on mobile */
+            gap: 2rem; /* Spacing between cards */
+        }
+
+        .solution-card {
+            background-color: #ffffff;
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Softer, cleaner shadow */
+            overflow: hidden; /* Ensures image corners are rounded correctly */
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .solution-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .solution-card img {
+            width: 100%;
+            height: 250px; /* Fixed height for consistent image size */
+            object-fit: cover; /* Ensures images cover the area without distortion */
+            border-bottom: 1px solid #eee; /* Subtle separator */
+        }
+
+        .solution-card-content {
+            padding: 2rem; /* Inner padding for card content */
+        }
+
+        .solution-card .category-tag { /* New class for the span for better specificity */
+            color:  #008b7a; /* Amber 500 */
+            font-weight: 600;
+            letter-spacing: 0.05em; /* Tracking wider */
+            font-size: 0.875rem; /* Small text for category */
+            text-transform: uppercase;
+            display: block; /* Ensures it takes its own line */
+            margin-bottom: 0.5rem; /* Spacing below category tag */
+        }
+
+        .solution-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.875rem; /* Card title size */
+            line-height: 1.3; /* Tighter line height for titles */
+            color: #1e293b; /* Slate 800 */
+            margin-top: 0; /* Reset default margin */
+            margin-bottom: 0.75rem; /* Spacing below title */
+        }
+
+        .solution-card p {
+            color: #475569; /* Slate 600 */
+            margin-bottom: 1rem; /* Spacing below paragraph */
+            font-size: 1.05rem; /* Slightly increased for readability within cards */
+            line-height: 1.6;
+        }
+
+        .list-icon {
+            color: #008b7a; /* Amber 500 */
+            margin-right: 0.75rem; /* Spacing for icon */
+            margin-top: 0.2rem; /* Slight adjustment for alignment */
+            flex-shrink: 0; /* Prevents icon from shrinking */
+        }
+
+        .icon-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .icon-list li {
+            display: flex;
+            align-items: flex-start; /* Align icon and text to top */
+            margin-bottom: 0.75rem; /* Spacing between list items */
+            color: #334155; /* Slate 700 */
+            font-size: 0.95rem;
+        }
+        .icon-list li:last-child {
+            margin-bottom: 0; /* No margin on last item */
+        }
+
+        /* Professional Call-to-Action Button Style */
+        .cta-button-pro {
+            display: inline-block;
+            background-color: #008b7a; /* Amber 500 */
+            color: #ffffff;
+            font-weight: bold;
+            padding: 0.60rem 1.5rem; /* Button padding */
+            border-radius: 3px; /* Rounded corners */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: all 0.3s ease-in-out; /* Smooth transitions */
+            text-align: center;
+            text-decoration: none;
+            margin-top: 1.5rem; /* Spacing above button */
+            border: none; /* No default button border */
+            cursor: pointer; /* Indicate clickability */
+            outline: none; /* Remove default focus outline */
+        }
+        .cta-button-pro:hover {
+            background-color: #05b7a2; /* Amber 600 */
+            transform: translateY(-2px); /* Slight lift effect */
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+        }
+        .cta-button-pro:focus-visible { /* For accessibility */
+            outline: 2px solid  #008b7a;
+            outline-offset: 2px;
+        }
+
+        /* Equipment Cards (Dark Section) */
+        .equipment-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Default to 1 column on mobile */
+            gap: 2rem; /* Spacing between cards */
+        }
+
+        .equipment-card {
+            background-color: #1e293b; /* Slate 800 */
+            padding: 2rem; /* Inner padding */
+            border-radius: 3px; /* Rounded corners */
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for dark background */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+         .equipment-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .equipment-card img {
+            width: 100%;
+            height: 12rem; /* Fixed height */
+            object-fit: cover;
+            border-radius: 0.5rem; /* Rounded image corners */
+            margin-bottom: 1.5rem; /* Spacing below image */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05); /* Subtle image shadow */
+        }
+
+        .equipment-card h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem; /* Title size */
+            color: #ffffff;
+            margin-bottom: 0.5rem; /* Spacing below title */
+        }
+
+        .equipment-card p {
+            color: #94a3b8; /* Slate 400 */
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 768px) { /* Medium screens (md breakpoint) */
+            .pro-heading {
+                font-size: 3rem; /* Larger heading */
+                line-height: 1.1;
+            }
+            .section-header {
+                margin-bottom: 5rem; /* More space below header */
+            }
+            .containers {
+                padding: 0 1.5rem; /* Standard padding on larger screens */
+            }
+            .solution-cards-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for solutions */
+            }
+            .equipment-cards-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for equipment */
+            }
+        }
+
+        @media (min-width: 1024px) { /* Large screens (lg breakpoint) */
+            /* For a 2x2 grid on desktop for both solutions and equipment */
+            .solution-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .equipment-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Uncomment the following to achieve a 3x3 layout for solutions or equipment if you have enough items */
+            /*
+            .solution-cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .equipment-cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            */
+        }
+
+        /* Animation specific delays - Adjust as needed if more items are added */
+        /* These styles will apply to any element with 'feature-item' class */
+        .feature-item:nth-child(1) { transition-delay: 0ms; }
+        .feature-item:nth-child(2) { transition-delay: 100ms; }
+        .feature-item:nth-child(3) { transition-delay: 200ms; }
+        .feature-item:nth-child(4) { transition-delay: 300ms; }
+        .feature-item:nth-child(5) { transition-delay: 400ms; }
+        .feature-item:nth-child(6) { transition-delay: 500ms; }
+        .feature-item:nth-child(7) { transition-delay: 600ms; }
+        .feature-item:nth-child(8) { transition-delay: 700ms; }
+        .feature-item:nth-child(9) { transition-delay: 800ms; }
+        .feature-item:nth-child(10) { transition-delay: 900ms; }
+    </style>
+
+
+    <section class="pro-section">
+        <div class="containers">
+
+            <div class="section-header feature-item">
+                <h2 class="pro-heading">Complete Solar & Electrical Solutions</h2>
+                <p>From small residential setups to large commercial installations, we design and install complete solar systems tailored to your specific energy needs.</p>
+            </div>
+
+            <div class="solution-cards-grid">
+
+                <div class="solution-card feature-item">
+                    <img src="https://cdn.britannica.com/91/222691-050-E8BDF226/installing-solar-panels.jpg?w=400&h=300&c=crop" alt="Off-Grid Solar Installation">
+                    <div class="solution-card-content">
+                        <span class="category-tag">OFF-GRID SOLUTIONS</span>
+                        <h3>Complete Off-Grid Systems</h3>
+                        <p>Achieve complete energy independence with our off-grid solar solutions. Perfect for remote locations or those wanting to disconnect from the grid entirely.</p>
+                        <ul class="icon-list">
+                            <li><i class="fas fa-check-circle list-icon"></i><span>Systems from 5kW to 24kW+ with parallel inverter configurations</span></li>
+                            <li><i class="fas fa-check-circle list-icon"></i><span>Complete electrical work including DB boards, circuits, and lighting</span></li>
+                        </ul>
+                        <a href="#contact" class="cta-button-pro">Get Your Quote</a>
+                    </div>
+                </div>
+
+                <div class="solution-card feature-item">
+                    <img src="https://www.deegesolar.co.uk/wp-content/uploads/2021/10/String_Inverter_FI-768x512.jpg" alt="Hybrid Solar System">
+                    <div class="solution-card-content">
+                        <span class="category-tag">HYBRID SYSTEMS</span>
+                        <h3>Hybrid Solar Solutions</h3>
+                        <p>Get the best of both worlds with our hybrid systems. Stay connected to the grid while building your battery backup for load-shedding protection.</p>
+                        <ul class="icon-list">
+                            <li><i class="fas fa-check-circle list-icon"></i><span>Seamless grid-tie with battery backup capability</span></li>
+                            <li><i class="fas fa-check-circle list-icon"></i><span>Expandable systems - start small and grow your setup</span></li>
+                        </ul>
+                        <a href="#contact" class="cta-button-pro">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="solution-card feature-item">
+                    <img src="https://www.qoltec.com/files/en/product/gallery/main-image-635149b0591ba.jpg" alt="Large Scale Solar Installation">
+                    <div class="solution-card-content">
+                        <span class="category-tag">COMMERCIAL SYSTEMS</span>
+                        <h3>Large Scale Installations</h3>
+                        <p>Power your business with our commercial-grade solar solutions. We handle everything from system design to installation and ongoing maintenance.</p>
+                        <ul class="icon-list">
+                            <li><i class="fas fa-check-circle list-icon"></i><span>Up to 85.98kWh battery storage with 77.4kWh usable capacity</span></li>
+                            <li><i class="fas fa-check-circle list-icon"></i><span>3-phase systems with parallel inverter configurations</span></li>
+                        </ul>
+                        <a href="#contact" class="cta-button-pro">Request Assessment</a>
+                    </div>
+                </div>
+
+                <div class="solution-card feature-item">
+                    <img src="https://placehold.co/600x400/0f172a/eab308?text=System+Upgrade" alt="Solar System Upgrade">
+                    <div class="solution-card-content">
+                        <span class="category-tag">SYSTEM UPGRADES</span>
+                        <h3>Solar System Upgrades</h3>
+                        <p>Already have solar? We can upgrade your existing system with additional panels, batteries, or newer inverter technology to maximize your energy independence.</p>
+                        <ul class="icon-list">
+                            <li><i class="fas fa-check-circle list-icon"></i><span>Additional battery storage for extended backup power</span></li>
+                            <li><i class="fas fa-check-circle list-icon"></i><span>System relocation and expansion services</span></li>
+                        </ul>
+                        <a href="#contact" class="cta-button-pro">Upgrade Your System</a>
+                    </div>
+                </div>
+
+                <div class="solution-card feature-item">
+                    <img src="https://placehold.co/600x400/0f172a/eab308?text=Site+Assessment" alt="Site Assessment">
+                    <div class="solution-card-content">
+                        <span class="category-tag">PROFESSIONAL ASSESSMENT</span>
+                        <h3>Site Assessment & Design</h3>
+                        <p>Every installation starts with a thorough site assessment. We analyze your energy usage, roof space, and electrical setup to design the perfect system for your needs.</p>
+                        <ul class="icon-list">
+                            <li><i class="fas fa-check-circle list-icon"></i><span>Detailed energy usage analysis and system sizing</span></li>
+                            <li><i class="fas fa-check-circle list-icon"></i><span>Professional electrical assessment and compliance</span></li>
+                        </ul>
+                        <a href="#contact" class="cta-button-pro">Book Assessment</a>
+                    </div>
+                </div>
+
+                <div class="solution-card feature-item">
+                    <img src="https://placehold.co/600x400/0f172a/eab308?text=Electrical+Services" alt="Electrical Services">
+                    <div class="solution-card-content">
+                        <span class="category-tag">ELECTRICAL SERVICES</span>
+                        <h3>Complete Electrical Work</h3>
+                        <p>Beyond solar, we provide comprehensive electrical services including DB board installations, circuit wiring, lighting, and plug socket installations for new constructions.</p>
+                        <ul class="icon-list">
+                            <li><i class="fas fa-check-circle list-icon"></i><span>Indoor and outdoor electrical installations</span></li>
+                            <li><i class="fas fa-check-circle list-icon"></i><span>Main DB board setup and circuit distribution</span></li>
+                        </ul>
+                        <a href="#contact" class="cta-button-pro">Get Electrical Quote</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="pro-section-dark">
+        <div class="containers">
+            <div class="section-header feature-item">
+                <h2 class="pro-heading">Premium Components We Use</h2>
+                <p>We exclusively use proven, high-quality components from trusted manufacturers to ensure your solar system delivers reliable performance for decades.</p>
+            </div>
+
+            <div class="equipment-cards-grid">
+                <div class="equipment-card feature-item">
+                    <img src="https://cdn.britannica.com/91/222691-050-E8BDF226/installing-solar-panels.jpg?w=400&h=300&c=crop" alt="JA Solar and Canadian Solar Panels">
+                    <h4>Solar Panels</h4>
+                    <p>High-efficiency <strong>590W JA Solar</strong> and <strong>585W Canadian Solar</strong> panels with excellent performance warranties and proven durability.</p>
+                </div>
+                <div class="equipment-card feature-item" style="transition-delay: 100ms;">
+                    <img src="https://www.deegesolar.co.uk/wp-content/uploads/2021/10/String_Inverter_FI-768x512.jpg" alt="Deye and Sunsynk Inverters">
+                    <h4>Hybrid Inverters</h4>
+                    <p>Reliable <strong>Deye</strong> and <strong>Sunsynk</strong> hybrid inverters from 5kW to 12kW, with parallel configurations available for larger installations.</p>
+                </div>
+                <div class="equipment-card feature-item" style="transition-delay: 200ms;">
+                    <img src="https://www.qoltec.com/files/en/product/gallery/main-image-635149b0591ba.jpg" alt="Luxpower Off-Grid Inverters">
+                    <h4>Off-Grid Inverters</h4>
+                    <p>Powerful <strong>Luxpower</strong> off-grid inverters for complete energy independence, available in 6kW configurations with pure sine wave output.</p>
+                </div>
+                <div class="equipment-card feature-item" style="transition-delay: 300ms;">
+                    <img src="https://placehold.co/600x400/0f172a/eab308?text=Lithium+Batteries" alt="Lithium Battery Storage">
+                    <h4>Lithium Battery Storage</h4>
+                    <p>Long-lasting <strong>Dyness 14.33kWh</strong>, <strong>Sunsynk 5.32kWh</strong>, and <strong>Volta 5.12kWh & 10.34kWh</strong> lithium-ion batteries for reliable energy storage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: stop observing once the element is visible to improve performance
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        document.querySelectorAll('.feature-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+
+
+
+
+</section>
+
+
+
+
+
+
 </br>
 </br>
 
@@ -165,7 +570,7 @@
         /* --- General Body and Layout Styles --- */
         .clients {
             font-family: 'Inter', sans-serif;
-           
+            
             color: #333;
             display: flex;
             align-items: center;
