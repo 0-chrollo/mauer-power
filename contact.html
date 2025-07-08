@@ -365,6 +365,7 @@
       </select>
     </div>
 
+
     <div class="form-group">
       <input type="text" name="serviceLocation" placeholder="Installation Location (Address)" required>
     </div>
@@ -659,6 +660,159 @@
         }
     
     </style>
+
+
+<style>
+        
+    .review-us {
+  
+       
+      
+       
+        padding: 0px 0px;
+        margin-left: 40px;
+        
+    }
+    
+    @media (min-width: 768px) {
+        .review-us {
+           
+            padding: 50px 40px;
+            margin-left: 40px;
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .review-us {
+           
+            padding: 10px 50px;
+            margin-left: 210px;
+        }
+        
+        .section-title {
+            font-size: 50px;
+            color: #008b7a;
+          
+        }
+        
+        .rating-number {
+            font-size: 38px;
+        }
+        
+        .google-reviews {
+            margin-bottom: 0px;
+        }
+        
+        .google-logo {
+            font-size: 26px;
+        }
+        
+        .stars .star {
+            font-size: 22px;
+        }
+    }
+    
+    .section-title {
+        font-size: 24px;
+        font-weight: bold;
+     
+        margin-bottom: 15px;
+       
+        
+    }
+    
+    .google-reviews {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+    
+    .google-logo {
+        font-size: 24px;
+        font-weight: 500;
+        color: #333;
+        margin-right: 8px;
+    }
+    
+    .google-g { color: #4285f4; }
+    .google-o1 { color: #ea4335; }
+    .google-o2 { color: #fbbc05; }
+    .google-g2 { color: #4285f4; }
+    .google-l { color: #34a853; }
+    .google-e { color: #ea4335; }
+    
+    .rating-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .rating-number {
+        font-size: 32px;
+        font-weight: bold;
+        color: #333;
+        margin-right: 10px;
+    }
+    
+    .stars {
+        margin-right: 10px;
+    }
+    
+    .star {
+        color: #ffc107;
+        font-size: 20px;
+        margin-right: 2px;
+    }
+    
+    .review-count {
+        color: #666;
+        font-size: 14px;
+    }
+    
+    .review-button {
+        background-color:#008b7a;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 3px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .review-button:hover {
+        background-color: #3367d6;
+    }
+</style>
+<p id="reviews"></p>
+<div class="review-us">
+    <h2 class="section-title" style=" color: #008b7a;margin-right:10px;"><i class="fas fa-arrow-circle-down"></i> What Our Customers Say</h2>
+    <div style="margin: 10px 10px;height: 7px; width:13vh; background-color: #019483;">
+    </div>  
+    <div class="google-reviews">
+        <span class="google-logo">
+            <span class="google-g">G</span><span class="google-o1">o</span><span class="google-o2">o</span><span class="google-g2">g</span><span class="google-l">l</span><span class="google-e">e</span>
+        </span>
+        <span style="color: #333; font-size: 24px; font-weight: 400;">Reviews</span>
+    </div>
+    
+    <div class="rating-container">
+        <span class="rating-number">5.0</span>
+        <div class="stars">
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+        </div>
+        <span class="review-count">(18)</span>
+    </div>
+    
+    <button class="review-button">Review us on Google</button>
+</div>
+
+
+
     
     <section class="clients">
     
@@ -666,116 +820,252 @@
         <div class="slider-container">
             <!-- Reviews slider container -->
             <div id="reviews-container" class="reviews-container">
-                
-                <!-- Review Card 1 -->
-                <div class="review-card">
-                    <div class="card-header">
-                        <div class="avatar avatar-purple">LM</div>
-                        <div class="reviewer-info">
-                            <p class="reviewer-name">Lucas Mu</p>
-                            <p class="review-date">2 days ago</p>
-                        </div>
-                        <div class="google-logo">
-                           <i class="fa-brands fa-google"></i> Google
-                        </div>
-                    </div>
-                    <div>
-                        <div class="verified-customer">
-                           <i class="fas fa-check-circle"></i>
-                           <span>Verified Customer</span>
-                        </div>
-                        <div class="star-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                    <p class="review-text">
-                        Energy mate solutions provides the best energy service in Lahore. Their team is professional and highly efficient. I am extremely satisfied with their...
-                    </p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-    
-                <!-- Review Card 2 -->
-                <div class="review-card">
-                    <div class="card-header">
-                        <div class="avatar avatar-teal">AK</div>
-                        <div class="reviewer-info">
-                            <p class="reviewer-name">Azar Khan</p>
-                            <p class="review-date">5 days ago</p>
-                        </div>
-                         <div class="google-logo">
-                           <i class="fa-brands fa-google"></i> Google
-                        </div>
-                    </div>
-                    <div>
-                        <div class="verified-customer">
-                           <i class="fas fa-check-circle"></i>
-                           <span>Verified Customer</span>
-                        </div>
-                        <div class="star-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="review-text">
-                        Fantastic service! The team was very professional and delivered exactly what was promised. I'm very impressed with the quality and efficiency. Highly...
-                    </p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-    
-                <!-- Review Card 3 -->
-                <div class="review-card">
-                    <div class="card-header">
-                        <div class="avatar avatar-red">JS</div>
-                        <div class="reviewer-info">
-                            <p class="reviewer-name">Jane Smith</p>
-                            <p class="review-date">1 week ago</p>
-                        </div>
-                         <div class="google-logo">
-                           <i class="fa-brands fa-google"></i> Google
-                        </div>
-                    </div>
-                    <div>
-                        <div class="verified-customer">
-                           <i class="fas fa-check-circle"></i>
-                           <span>Verified Customer</span>
-                        </div>
-                        <div class="star-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="review-text">
-                        A truly seamless experience from start to finish. The customer support was top-notch and the final product exceeded my expectations. I would definitely...
-                    </p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-    
-                 <!-- Review Card 4 -->
-                <div class="review-card">
-                    <div class="card-header">
-                        <div class="avatar avatar-blue">MB</div>
-                        <div class="reviewer-info">
-                            <p class="reviewer-name">Mike Brown</p>
-                            <p class="review-date">2 weeks ago</p>
-                        </div>
-                         <div class="google-logo">
-                           <i class="fa-brands fa-google"></i> Google
-                        </div>
-                    </div>
-                    <div>
-                        <div class="verified-customer">
-                           <i class="fas fa-check-circle"></i>
-                           <span>Verified Customer</span>
-                        </div>
-                        <div class="star-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="review-text">
-                        Incredible attention to detail. The installation was quick and clean. I'm very happy with the service and have already recommended them to my friends...
-                    </p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
+  <!-- Review Card 1 -->
+<div class="review-card">
+    <div class="card-header">
+        <div class="avatar avatar-purple">GN</div>
+        <div class="reviewer-info">
+            <p class="reviewer-name">George van Niekerk</p>
+            <p class="review-date">8 months ago</p>
+        </div>
+        <div class="google-logo">
+           <i class="fa-brands fa-google"></i> Google
+        </div>
+    </div>
+    <div>
+        <div class="verified-customer">
+           <i class="fas fa-check-circle"></i>
+           <span>Verified Customer</span>
+        </div>
+        <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    </div>
+    <p class="review-text">
+        I have been the unfortunate victim of the initial solar provider "promise you the moon and then deliver a sub standard system with absolute disgusting results, frustrations and non existent after sales service"...
+    </p>
+    <a href="https://g.co/kgs/NQwMokT" class="read-more">Read More</a>
+</div>
+
+<!-- Review Card 2 -->
+<div class="review-card">
+    <div class="card-header">
+        <div class="avatar avatar-teal">GT</div>
+        <div class="reviewer-info">
+            <p class="reviewer-name">Genive Trimble</p>
+            <p class="review-date">5 months ago</p>
+        </div>
+         <div class="google-logo">
+           <i class="fa-brands fa-google"></i> Google
+        </div>
+    </div>
+    <div>
+        <div class="verified-customer">
+           <i class="fas fa-check-circle"></i>
+           <span>Verified Customer</span>
+        </div>
+        <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    </div>
+    <p class="review-text">
+        Exceptional installation done by Mauer Power 🙏🏼 ⚡️ very impressed with the quality and professionalism of the team!
+    </p>
+    <a href="https://g.co/kgs/6s3a3vK" class="read-more">Read More</a>
+</div>
+
+<!-- Review Card 3 -->
+<div class="review-card">
+    <div class="card-header">
+        <div class="avatar avatar-blue">DB</div>
+        <div class="reviewer-info">
+            <p class="reviewer-name">Derrick Bebington</p>
+            <p class="review-date">2 years ago</p>
+        </div>
+         <div class="google-logo">
+           <i class="fa-brands fa-google"></i> Google
+        </div>
+    </div>
+    <div>
+        <div class="verified-customer">
+           <i class="fas fa-check-circle"></i>
+           <span>Verified Customer</span>
+        </div>
+        <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    </div>
+    <p class="review-text">
+        Nicolas Mauerberger did an excellent job of installing a 5 Kw Inverter, 5 Kw battery and panels at my home. Nice and neat, and the after service attention I get is also excellent...
+    </p>
+    <a href="https://g.co/kgs/M4aH5gz" class="read-more">Read More</a>
+</div>
+
+<!-- Review Card 4 -->
+<div class="review-card">
+    <div class="card-header">
+        <div class="avatar avatar-green">DZ</div>
+        <div class="reviewer-info">
+            <p class="reviewer-name">Damon Zietsman</p>
+            <p class="review-date">5 months ago</p>
+        </div>
+         <div class="google-logo">
+           <i class="fa-brands fa-google"></i> Google
+        </div>
+    </div>
+    <div>
+        <div class="verified-customer">
+           <i class="fas fa-check-circle"></i>
+           <span>Verified Customer</span>
+        </div>
+        <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    </div>
+    <p class="review-text">
+        Received great electrical services! Would definitely recommend.
+    </p>
+    <a href="https://g.co/kgs/WjbrnAU" class="read-more">Read More</a>
+</div>
+
+<!-- Review Card 5 -->
+<div class="review-card">
+    <div class="card-header">
+        <div class="avatar avatar-pink">J</div>
+        <div class="reviewer-info">
+            <p class="reviewer-name">June</p>
+            <p class="review-date">a year ago</p>
+        </div>
+         <div class="google-logo">
+           <i class="fa-brands fa-google"></i> Google
+        </div>
+    </div>
+    <div>
+        <div class="verified-customer">
+           <i class="fas fa-check-circle"></i>
+           <span>Verified Customer</span>
+        </div>
+        <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    </div>
+    <p class="review-text">
+        Excellent service from Nicholas and his assistant. I highly recommend Mauer Power to anyone wanting solar power. I liked his manner, his attention to detail and quality workmanship. A very pleasant experience.
+    </p>
+    <a href="https://g.co/kgs/AGrwEmp" class="read-more">Read More</a>
+</div>
+
+<!-- Review Card 6 -->
+<div class="review-card">
+    <div class="card-header">
+        <div class="avatar avatar-gold">GB</div>
+        <div class="reviewer-info">
+            <p class="reviewer-name">Garry Batkin</p>
+            <p class="review-date">a year ago</p>
+        </div>
+         <div class="google-logo">
+           <i class="fa-brands fa-google"></i> Google
+        </div>
+    </div>
+    <div>
+        <div class="verified-customer">
+           <i class="fas fa-check-circle"></i>
+           <span>Verified Customer</span>
+        </div>
+        <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    </div>
+    <p class="review-text">
+        Mauer Power installed my Solar system mid 2023. Very professional job. Neat tidy and performs perfectly. The Wifi capability allows for full monitoring via the Sunsynk app.
+    </p>
+    <a href="https://g.co/kgs/F4KbZBd" class="read-more">Read More</a>
+</div>
+
+<!-- Review Card 7 -->
+<div class="review-card">
+    <div class="card-header">
+        <div class="avatar avatar-red">CS</div>
+        <div class="reviewer-info">
+            <p class="reviewer-name">Christa Schenker</p>
+            <p class="review-date">a year ago</p>
+        </div>
+         <div class="google-logo">
+           <i class="fa-brands fa-google"></i> Google
+        </div>
+    </div>
+    <div>
+        <div class="verified-customer">
+           <i class="fas fa-check-circle"></i>
+           <span>Verified Customer</span>
+        </div>
+        <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    </div>
+    <p class="review-text">
+        We will definitely recommend Nicholas!!! After sales service awesome! Always ready to help and give advice! 10 ⭐️ rating
+    </p>
+    <a href="https://g.co/kgs/zu316YC" class="read-more">Read More</a>
+</div>
+
+<!-- Review Card 8 -->
+<div class="review-card">
+    <div class="card-header">
+        <div class="avatar avatar-blue">GC</div>
+        <div class="reviewer-info">
+            <p class="reviewer-name">Glenda Cronin</p>
+            <p class="review-date">a year ago</p>
+        </div>
+         <div class="google-logo">
+           <i class="fa-brands fa-google"></i> Google
+        </div>
+    </div>
+    <div>
+        <div class="verified-customer">
+           <i class="fas fa-check-circle"></i>
+           <span>Verified Customer</span>
+        </div>
+        <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    </div>
+    <p class="review-text">
+        Professional service provided and very happy with the installation. Can highly recommend.
+    </p>
+    <a href="https://g.co/kgs/j9uoELB" class="read-more">Read More</a>
+</div>
+
+<!-- Review Card 9 -->
+<div class="review-card">
+    <div class="card-header">
+        <div class="avatar avatar-pink">FM</div>
+        <div class="reviewer-info">
+            <p class="reviewer-name">Fortunate Mashabela</p>
+            <p class="review-date">2 years ago</p>
+        </div>
+         <div class="google-logo">
+           <i class="fa-brands fa-google"></i> Google
+        </div>
+    </div>
+    <div>
+        <div class="verified-customer">
+           <i class="fas fa-check-circle"></i>
+           <span>Verified Customer</span>
+        </div>
+        <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    </div>
+    <p class="review-text">
+        Very punctual, neat work and available to assist after installation. They are very professional. I recommend their work to anyone.
+    </p>
+    <a href="https://g.co/kgs/mDU4ReN" class="read-more">Read More</a>
+</div>
+
     
             </div>
+    
     
             <!-- Navigation Buttons -->
             <button id="prev-btn" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
@@ -1087,13 +1377,11 @@
             <div class="footer-content">
                 <!-- Company Info Section -->
                 <div class="footer-section">
-                    <h3>About Company</h3>
-                    <p>We are a leading professional services company committed to delivering excellence and innovation to our clients worldwide. Our expertise spans multiple industries with a focus on quality and integrity.</p>
-                    <div class="social-links">
-                        <a href="#">FB</a>
-                        <a href="#">TW</a>
-                        <a href="#">IN</a>
-                        <a href="#">YT</a>
+                    <h3>About Mauer Solar</h3>
+    <p>We are a professional solar installation company dedicated to helping families and businesses achieve energy independence. Our team takes pride in delivering exceptional service from consultation to completion, ensuring every installation is neat, compliant, and built to last. </p>
+    <div class="social-links">
+                        <a href="https://www.facebook.com/mauerpowersolar"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/+27632005066" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
     
@@ -1101,12 +1389,14 @@
                 <div class="footer-section">
                     <h3>Our Services</h3>
                     <ul>
-                        <li><a href="#">Business Consulting</a></li>
-                        <li><a href="#">Strategic Planning</a></li>
-                        <li><a href="#">Project Management</a></li>
-                        <li><a href="#">Financial Advisory</a></li>
-                        <li><a href="#">Risk Management</a></li>
-                        <li><a href="#">Compliance Services</a></li>
+                        <li>Battery Storage Solutions</li>
+        <li>Hybrid Solar System Installation</li>
+        <li>Solar System Upgrade</li>
+        <li>Off-grid Solar System Installation</li>
+        <li>Inverter Installation / Replacement</li>
+        <li>Residential Solar Installation</li>
+        <li>Commercial Solar Installation</li>
+        <li>DB Board & Electrical Wiring</li>
                     </ul>
                 </div>
     
@@ -1114,12 +1404,11 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">News & Updates</a></li>
-                        <li><a href="#">Career Opportunities</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="#reviews">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                   
                     </ul>
                 </div>
     
@@ -1132,7 +1421,7 @@
                    
                 </div>
             </div>
-        </div>.
+        </div>
     </footer>
     
     

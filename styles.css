@@ -61,12 +61,10 @@ body {
 }
 
 .slide-1 {
-    background-image: url('https://cdn.britannica.com/91/222691-050-E8BDF226/installing-solar-panels.jpg');
-}
-
-.slide-2 {
     background-image: url('https://www.prysmian.com/sites/www.prysmian.com/files/2024-01/header-solar-energy-photovoltaics-1150x650.png');
 }
+
+
 
 .hero-slideshow::before {
     content: '';
