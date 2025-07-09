@@ -391,10 +391,10 @@ body {
 }
 
 .logo img {
-    padding-top: 11px;
+    padding-top: 3px;
     background-color: transparent;
-    height: 17vh;
-    width: 14vh;
+    height: 19vh;
+    width: 15vh;
     transition: all 0.3s ease;
 }
 
