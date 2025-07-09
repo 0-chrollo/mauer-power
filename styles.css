@@ -391,9 +391,9 @@ body {
 
 .logo img {
     padding-top: 15px;
-    border: 1.5px solid #02ae9748;
-    height: 13.5vh;
-    width: 14vh;
+    
+    height: 13vh;
+    width: 12vh;
     transition: all 0.3s ease;
 }
 
