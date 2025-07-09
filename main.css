@@ -55,10 +55,13 @@ body {
 }
 
 .logo img {
-    height: 40px;
-    width: auto;
+    padding-top: 3px;
+    background-color: transparent;
+    height: 16vh;
+    width: 14vh;
     transition: all 0.3s ease;
 }
+
 
 .logo-text {
     font-size: 1rem;
