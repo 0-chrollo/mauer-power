@@ -387,13 +387,14 @@ body {
     gap: 10px;
     text-decoration: none;
     transition: all 0.3s ease;
+    background-color: transparent;
 }
 
 .logo img {
-    padding-top: 15px;
-    
-    height: 13vh;
-    width: 12vh;
+    padding-top: 11px;
+    background-color: transparent;
+    height: 17vh;
+    width: 14vh;
     transition: all 0.3s ease;
 }
 
