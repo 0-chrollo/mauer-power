@@ -770,7 +770,7 @@ body {
     padding: 12px 24px;
     background: var(--solar-primary);
     color: white;
-    border-radius: 6px;
+    border-radius: 2px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
